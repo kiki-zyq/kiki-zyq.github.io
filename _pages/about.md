@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently an undergraduate student at Central University of Finance and Economics (CUFE), majoring in Data Science and Big Data Technology.
+I am currently an undergraduate student at the Central University of Finance and Economics (CUFE), majoring in Data Science and Big Data Technology, with a focus on multi-modal large language models and remote sensing.
 
 ## Education
 
