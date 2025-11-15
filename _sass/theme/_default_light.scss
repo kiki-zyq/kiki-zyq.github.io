@@ -1,9 +1,8 @@
 /* ==========================================================================
    DEFAULT THEME
    ========================================================================== */
-
 /* Color codes used for the theme */
-$gray                       : #54AEA6;  
+$gray                       : #54AEA6;  /* ← 改 */
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
@@ -11,10 +10,10 @@ $lighter-gray               : mix(#fff, $gray, 90%);
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
-$info-color                 : #76BEA6; 
-$notice-color               : #54AEA6;  
-$success-color              : #9EDDA2;  
-$warning-color              : #EBCF53; 
+$info-color                 : #76BEA6;  /* ← 改 */
+$notice-color               : #54AEA6;  /* ← 改 */
+$success-color              : #9EDDA2;  /* ← 改 */
+$warning-color              : #EBCF53;  /* ← 改 */
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -28,19 +27,19 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
-    --global-base-color                 : #54AEA6;  
+    --global-base-color                 : #54AEA6;  /* ← 改 */
     --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f5faf8;  
-    --global-border-color               : #9EDDA2;  
-    --global-dark-border-color          : #76BEA6;  
-    --global-code-background-color      : #f5faf8;  
+    --global-footer-bg-color            : #f5faf8;  /* ← 改 */
+    --global-border-color               : #9EDDA2;  /* ← 改 */
+    --global-dark-border-color          : #76BEA6;  /* ← 改 */
+    --global-code-background-color      : #f5faf8;  /* ← 改 */
     --global-code-text-color            : #{$darker-gray};
     --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #54AEA6;  
-    --global-link-color-hover           : #76BEA6;  
-    --global-link-color-visited         : #54AEA6;  
-    --global-masthead-link-color        : #{$dark-gray};  
-    --global-masthead-link-color-hover  : #54AEA6;  
+    --global-link-color                 : #54AEA6;  /* ← 改 */
+    --global-link-color-hover           : #76BEA6;  /* ← 改 */
+    --global-link-color-visited         : #54AEA6;  /* ← 改 */  
+    --global-masthead-link-color        : #{$dark-gray};
+    --global-masthead-link-color-hover  : #54AEA6;  /* ← 改 */    
     --global-text-color                 : #{$dark-gray};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$lighter-gray};
