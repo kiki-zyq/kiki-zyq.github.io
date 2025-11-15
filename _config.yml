@@ -28,7 +28,7 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Undergraduate student, Data Science and Big Data Technology"
 
-  location         : "Earth"
+  location         : "China"
   employer         : "CUFE"
   uri              : # URL
   email            : "13880155015@163.com" 
@@ -55,7 +55,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : #"bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
