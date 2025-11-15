@@ -1,27 +1,25 @@
 /* ==========================================================================
    DARK THEME
    ========================================================================== */
-
 /* Color codes used for the theme */
-$gray                       : #7a8288;
+$gray                       : #54AEA6;  /* ← 改：保持品牌色 */
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
-
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$background                 : #1a2f2e;  /* ← 改：深青绿背景 */
+$background-light           : mix(#fff, $background, 15%);  /* ← 改 */
+$background-lighter         : mix(#fff, $background, 25%);  /* ← 改 */
+$text                       : #e8f5f3;  /* ← 改：浅色文字 */
+$link                       : #76BEA6;  /* ← 改：柔和青绿链接 */
+$link-dark                  : #54AEA6;  /* ← 改：深青色 */
+$link-light                 : #9EDDA2;  /* ← 改：浅绿色 */
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #ff6b6b;  /* ← 改：更亮的红色 */
+$info-color                 : #76BEA6;  /* ← 改 */
+$notice-color               : #54AEA6;  /* ← 改 */
+$success-color              : #9EDDA2;  /* ← 改 */
+$warning-color              : #EBCF53;  /* ← 改 */
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -35,20 +33,20 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
-    --global-base-color                 : #{$background};
-    --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$light-gray};
-    --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
-    --global-text-color                 : #{$text};
-    --global-text-color-light           : #f3f3f3;
-    --global-thead-color                : #{$background-lighter};
+    --global-base-color                 : #1a2f2e;  /* ← 改：深青绿 */
+    --global-bg-color                   : #1a2f2e;  /* ← 改 */
+    --global-footer-bg-color            : #152624;  /* ← 改：更深的脚注 */
+    --global-border-color               : #3d5a57;  /* ← 改：中等青绿边框 */
+    --global-dark-border-color          : #54AEA6;  /* ← 改：明亮边框 */
+    --global-code-background-color      : #243635;  /* ← 改：深绿代码背景 */
+    --global-code-text-color            : #9EDDA2;  /* ← 改：浅绿代码文字 */
+    --global-fig-caption-color          : #b0d4cc;  /* ← 改：图片说明 */
+    --global-link-color                 : #76BEA6;  /* ← 改：柔和青绿链接 */
+    --global-link-color-hover           : #9EDDA2;  /* ← 改：悬停变浅绿 */
+    --global-link-color-visited         : #76BEA6;  /* ← 改 */
+    --global-masthead-link-color        : #e8f5f3;  /* ← 改：导航栏浅色 */
+    --global-masthead-link-color-hover  : #EBCF53;  /* ← 改：悬停金黄 */
+    --global-text-color                 : #e8f5f3;  /* ← 改：浅色文字 */
+    --global-text-color-light           : #b0d4cc;  /* ← 改 */
+    --global-thead-color                : #2d4845;  /* ← 改：表头背景 */
 }
