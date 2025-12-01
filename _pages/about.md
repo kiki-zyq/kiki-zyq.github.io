@@ -31,22 +31,26 @@ I am also currently working on the development of **CUFE's Industrial and Region
   transform: translateY(-3px);
 }
 
-.paper-left {
+.paper-image-container {
+  position: relative;
   flex: 0 0 280px;
+  width: 280px;
+  height: 180px;
   margin-right: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .paper-badge {
-  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
   padding: 5px 12px;
   border-radius: 5px;
   font-size: 12px;
   font-weight: bold;
   color: white;
-  margin-bottom: 10px;
+  z-index: 2;
 }
 
 .badge-arxiv {
@@ -61,20 +65,15 @@ I am also currently working on the development of **CUFE's Industrial and Region
   background: linear-gradient(135deg, #ff9800, #e65100);
 }
 
-.paper-image-container {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
 .paper-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
 .paper-image-container:hover .paper-image {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .paper-content {
@@ -129,8 +128,12 @@ I am also currently working on the development of **CUFE's Industrial and Region
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
   border: 2px solid;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-arxiv {
@@ -165,7 +168,7 @@ I am also currently working on the development of **CUFE's Industrial and Region
 
 .btn-project:hover {
   background: #fff;
-  color: #bfa633;
+  color: #d4b84a;
   border-color: #EBCF53;
 }
 
