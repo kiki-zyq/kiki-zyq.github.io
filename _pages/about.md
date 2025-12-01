@@ -127,55 +127,57 @@ I am also currently working on the development of **CUFE's Industrial and Region
   font-size: 13px;
   font-weight: 600;
   text-decoration: none !important;
+  box-sizing: border-box;
+  border: 2px solid transparent;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-arxiv {
   background-color: #b31b1b;
-  border: 2px solid #b31b1b;
+  border-color: #b31b1b;
   color: #ffffff !important;
 }
 
 .btn-arxiv:hover {
   background-color: #ffffff !important;
   color: #b31b1b !important;
-  border: 2px solid #b31b1b !important;
+  border-color: #b31b1b !important;
 }
 
 .btn-github {
   background-color: #24292e;
-  border: 2px solid #24292e;
+  border-color: #24292e;
   color: #ffffff !important;
 }
 
 .btn-github:hover {
   background-color: #ffffff !important;
   color: #24292e !important;
-  border: 2px solid #24292e !important;
+  border-color: #24292e !important;
 }
 
 .btn-project {
   background-color: #EBCF53;
-  border: 2px solid #EBCF53;
+  border-color: #EBCF53;
   color: #000000 !important;
 }
 
 .btn-project:hover {
   background-color: #ffffff !important;
   color: #d4b84a !important;
-  border: 2px solid #EBCF53 !important;
+  border-color: #EBCF53 !important;
 }
 
 .btn-pdf {
   background-color: #e74c3c;
-  border: 2px solid #e74c3c;
+  border-color: #e74c3c;
   color: #ffffff !important;
 }
 
 .btn-pdf:hover {
   background-color: #ffffff !important;
   color: #e74c3c !important;
-  border: 2px solid #e74c3c !important;
+  border-color: #e74c3c !important;
 }
 </style>
 
