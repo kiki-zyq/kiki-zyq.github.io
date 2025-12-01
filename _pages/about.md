@@ -23,12 +23,11 @@ I am also currently working on the development of **CUFE's Industrial and Region
   padding: 20px;
   border-radius: 10px;
   background: #f9f9f9;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .paper-card:hover {
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  transform: translateY(-3px);
 }
 
 .paper-image-container {
@@ -127,61 +126,60 @@ I am also currently working on the development of **CUFE's Industrial and Region
   border-radius: 6px;
   font-size: 13px;
   font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-  border: 2px solid;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
+  text-decoration: none !important;
+  transition: all 0.3s ease;
 }
 
 .btn-arxiv {
-  background: #b31b1b;
-  border-color: #b31b1b;
-  color: white;
+  background-color: #b31b1b;
+  border: 2px solid #b31b1b;
+  color: #ffffff !important;
 }
 
 .btn-arxiv:hover {
-  background: #fff;
-  color: #b31b1b;
-  border-color: #b31b1b;
+  background-color: #ffffff !important;
+  color: #b31b1b !important;
+  border: 2px solid #b31b1b !important;
+  transform: translateY(-2px);
 }
 
 .btn-github {
-  background: #24292e;
-  border-color: #24292e;
-  color: white;
+  background-color: #24292e;
+  border: 2px solid #24292e;
+  color: #ffffff !important;
 }
 
 .btn-github:hover {
-  background: #fff;
-  color: #24292e;
-  border-color: #24292e;
+  background-color: #ffffff !important;
+  color: #24292e !important;
+  border: 2px solid #24292e !important;
+  transform: translateY(-2px);
 }
 
 .btn-project {
-  background: #EBCF53;
-  border-color: #EBCF53;
-  color: #000;
+  background-color: #EBCF53;
+  border: 2px solid #EBCF53;
+  color: #000000 !important;
 }
 
 .btn-project:hover {
-  background: #fff;
-  color: #d4b84a;
-  border-color: #EBCF53;
+  background-color: #ffffff !important;
+  color: #d4b84a !important;
+  border: 2px solid #EBCF53 !important;
+  transform: translateY(-2px);
 }
 
 .btn-pdf {
-  background: #e74c3c;
-  border-color: #e74c3c;
-  color: white;
+  background-color: #e74c3c;
+  border: 2px solid #e74c3c;
+  color: #ffffff !important;
 }
 
 .btn-pdf:hover {
-  background: #fff;
-  color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #ffffff !important;
+  color: #e74c3c !important;
+  border: 2px solid #e74c3c !important;
+  transform: translateY(-2px);
 }
 </style>
 
