@@ -5,32 +5,569 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<style>
+/* ===== Filter Section ===== */
+.filter-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
 
-{% include base_path %}
+.filter-group {
+  margin-bottom: 15px;
+}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+.filter-group:last-child {
+  margin-bottom: 0;
+}
 
+.filter-label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.filter-btn:hover {
+  border-color: #EBCF53;
+  color: #333;
+}
+
+.filter-btn.active {
+  background: #EBCF53;
+  border-color: #EBCF53;
+  color: #000;
+  font-weight: 600;
+}
+
+/* ===== Year Divider ===== */
+.year-divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0 20px 0;
+}
+
+.year-divider .year-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  padding-right: 20px;
+}
+
+.year-divider .year-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #EBCF53, transparent);
+}
+
+/* ===== Paper Card ===== */
+.paper-card {
+  display: flex;
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.paper-card:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.paper-card.hidden {
+  display: none;
+}
+
+.paper-image-container {
+  position: relative;
+  flex: 0 0 260px;
+  width: 260px;
+  height: 160px;
+  margin-right: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e0e0e0;
+}
+
+.paper-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+}
+
+.badge-arxiv {
+  background: linear-gradient(135deg, #b31b1b, #8b0000);
+}
+
+.badge-cvpr {
+  background: linear-gradient(135deg, #0066cc, #004999);
+}
+
+.badge-iccv {
+  background: linear-gradient(135deg, #6a1b9a, #4a148c);
+}
+
+.badge-eccv {
+  background: linear-gradient(135deg, #00695c, #004d40);
+}
+
+.badge-neurips {
+  background: linear-gradient(135deg, #5c6bc0, #3949ab);
+}
+
+.badge-icml {
+  background: linear-gradient(135deg, #ef6c00, #e65100);
+}
+
+.badge-aaai {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+}
+
+.badge-underreview {
+  background: linear-gradient(135deg, #ff9800, #e65100);
+}
+
+.paper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.paper-image-container:hover .paper-image {
+  transform: scale(1.08);
+}
+
+.paper-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paper-meta {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.paper-title {
+  font-size: 17px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.paper-authors {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.paper-authors .highlight {
+  color: #d4a800;
+  font-weight: bold;
+}
+
+.paper-authors a {
+  color: #d4a800;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.paper-authors a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Tags ===== */
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.paper-tag {
+  padding: 3px 10px;
+  background: #e8e8e8;
+  border-radius: 12px;
+  font-size: 11px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paper-tag:hover {
+  background: #EBCF53;
+  color: #000;
+}
+
+/* ===== Paper Links ===== */
+.paper-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  min-width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-arxiv {
+  background-color: #b31b1b;
+  border-color: #b31b1b;
+  color: #ffffff !important;
+}
+
+.btn-arxiv:hover {
+  background-color: #ffffff !important;
+  color: #b31b1b !important;
+}
+
+.btn-github {
+  background-color: #24292e;
+  border-color: #24292e;
+  color: #ffffff !important;
+}
+
+.btn-github:hover {
+  background-color: #ffffff !important;
+  color: #24292e !important;
+}
+
+.btn-project {
+  background-color: #EBCF53;
+  border-color: #EBCF53;
+  color: #000000 !important;
+}
+
+.btn-project:hover {
+  background-color: #ffffff !important;
+  color: #d4b84a !important;
+}
+
+.btn-pdf {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #ffffff !important;
+}
+
+.btn-pdf:hover {
+  background-color: #ffffff !important;
+  color: #e74c3c !important;
+}
+
+.btn-video {
+  background-color: #9b59b6;
+  border-color: #9b59b6;
+  color: #ffffff !important;
+}
+
+.btn-video:hover {
+  background-color: #ffffff !important;
+  color: #9b59b6 !important;
+}
+
+/* ===== Statistics ===== */
+.stats-bar {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ===== No Results ===== */
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 16px;
+  display: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .paper-card {
+    flex-direction: column;
+  }
+  
+  .paper-image-container {
+    width: 100%;
+    flex: none;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .filter-buttons {
+    gap: 6px;
+  }
+  
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+</style>
+
+<!-- Statistics Bar -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number" id="total-papers">2</div>
+    <div class="stat-label">Total Papers</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" id="showing-papers">2</div>
+    <div class="stat-label">Showing</div>
+  </div>
+</div>
+
+<!-- Filter Section -->
+<div class="filter-section">
+  <div class="filter-group">
+    <span class="filter-label">📅 Year</span>
+    <div class="filter-buttons" id="year-filters">
+      <button class="filter-btn active" data-filter="all" data-type="year">All</button>
+      <button class="filter-btn" data-filter="2025" data-type="year">2025</button>
+      <!-- Add more years as needed: 2026, 2027, etc. -->
+    </div>
+  </div>
+  
+  <div class="filter-group">
+    <span class="filter-label">🏷️ Topics</span>
+    <div class="filter-buttons" id="topic-filters">
+      <button class="filter-btn active" data-filter="all" data-type="topic">All</button>
+      <button class="filter-btn" data-filter="remote-sensing" data-type="topic">Remote Sensing</button>
+      <button class="filter-btn" data-filter="vqa" data-type="topic">VQA</button>
+      <button class="filter-btn" data-filter="vlm" data-type="topic">VLM</button>
+      <button class="filter-btn" data-filter="multimodal" data-type="topic">Multimodal</button>
+      <button class="filter-btn" data-filter="training-free" data-type="topic">Training-Free</button>
+      <button class="filter-btn" data-filter="geospatial" data-type="topic">Geospatial</button>
+      <button class="filter-btn" data-filter="reasoning" data-type="topic">Reasoning</button>
+      <!-- Add more topics as needed -->
+    </div>
+  </div>
+</div>
+
+<!-- Papers Container -->
+<div id="papers-container">
+
+  <!-- ==================== 2025 ==================== -->
+  <div class="year-divider" data-year="2025">
+    <span class="year-text">2025</span>
+    <div class="year-line"></div>
+  </div>
+
+  <!-- Paper: ZoomSearch -->
+  <div class="paper-card" 
+       data-year="2025" 
+       data-month="11"
+       data-topics="remote-sensing,vqa,multimodal,vlm,training-free,reasoning">
+    <div class="paper-image-container">
+      <span class="paper-badge badge-arxiv">arXiv</span>
+      <img class="paper-image" src="./images/paper/zoomsearch.jpg" alt="ZoomSearch">
+    </div>
+    <div class="paper-content">
+      <div class="paper-meta">Nov 2025 · arXiv Preprint</div>
+      <div class="paper-title">
+        Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search
+      </div>
+      <div class="paper-authors">
+        <span class="highlight">Yunqi Zhou*</span>, Chengjie Jiang*, Chun Yuan, Jing Li†
+      </div>
+      <div class="paper-tags">
+        <span class="paper-tag" data-topic="remote-sensing">Remote Sensing</span>
+        <span class="paper-tag" data-topic="vqa">VQA</span>
+        <span class="paper-tag" data-topic="vlm">VLM</span>
+        <span class="paper-tag" data-topic="training-free">Training-Free</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2511.20460" class="btn btn-arxiv">arXiv</a>
+        <a href="https://github.com/kiki-zyq/Zoom-Search" class="btn btn-github">GitHub</a>
+        <a href="https://kiki-zyq.github.io/ZoomSearch/" class="btn btn-project">Project</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper: GRASP -->
+  <div class="paper-card" 
+       data-year="2025" 
+       data-month="08"
+       data-topics="remote-sensing,multimodal,geospatial,reasoning">
+    <div class="paper-image-container">
+      <span class="paper-badge badge-arxiv">arXiv</span>
+      <img class="paper-image" src="./images/paper/grasp.png" alt="GRASP">
+    </div>
+    <div class="paper-content">
+      <div class="paper-meta">Aug 2025 · arXiv Preprint</div>
+      <div class="paper-title">
+        GRASP: Geospatial pixel Reasoning viA Structured Policy learning
+      </div>
+      <div class="paper-authors">
+        Chengjie Jiang, <span class="highlight">Yunqi Zhou</span>, Jiafeng Yan, Jing Li†, Jiayang Li, Yue Zhou, Hongjie He, Jonathan Li
+      </div>
+      <div class="paper-tags">
+        <span class="paper-tag" data-topic="remote-sensing">Remote Sensing</span>
+        <span class="paper-tag" data-topic="geospatial">Geospatial</span>
+        <span class="paper-tag" data-topic="reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2508.17102" class="btn btn-arxiv">arXiv</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- No Results Message -->
+<div class="no-results" id="no-results">
+  🔍 No papers found matching your filters.
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const papers = document.querySelectorAll('.paper-card');
+  const yearDividers = document.querySelectorAll('.year-divider');
+  const noResults = document.getElementById('no-results');
+  const showingPapers = document.getElementById('showing-papers');
+  
+  let activeFilters = {
+    year: 'all',
+    topic: 'all'
+  };
+
+  // Filter button click handler
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filterType = this.dataset.type;
+      const filterValue = this.dataset.filter;
+      
+      // Update active state for this filter group
+      document.querySelectorAll(`.filter-btn[data-type="${filterType}"]`).forEach(b => {
+        b.classList.remove('active');
+      });
+      this.classList.add('active');
+      
+      // Update active filters
+      activeFilters[filterType] = filterValue;
+      
+      // Apply filters
+      applyFilters();
+    });
+  });
+
+  // Tag click handler
+  document.querySelectorAll('.paper-tag').forEach(tag => {
+    tag.addEventListener('click', function() {
+      const topic = this.dataset.topic;
+      
+      // Update topic filter buttons
+      document.querySelectorAll('.filter-btn[data-type="topic"]').forEach(b => {
+        b.classList.remove('active');
+        if (b.dataset.filter === topic) {
+          b.classList.add('active');
+        }
+      });
+      
+      activeFilters.topic = topic;
+      applyFilters();
+    });
+  });
+
+  function applyFilters() {
+    let visibleCount = 0;
+    let visibleYears = new Set();
+
+    papers.forEach(paper => {
+      const paperYear = paper.dataset.year;
+      const paperTopics = paper.dataset.topics.split(',');
+
+      const yearMatch = activeFilters.year === 'all' || paperYear === activeFilters.year;
+      const topicMatch = activeFilters.topic === 'all' || paperTopics.includes(activeFilters.topic);
+
+      if (yearMatch && topicMatch) {
+        paper.classList.remove('hidden');
+        visibleCount++;
+        visibleYears.add(paperYear);
+      } else {
+        paper.classList.add('hidden');
+      }
+    });
+
+    // Show/hide year dividers
+    yearDividers.forEach(divider => {
+      if (activeFilters.year === 'all') {
+        divider.style.display = visibleYears.has(divider.dataset.year) ? 'flex' : 'none';
+      } else {
+        divider.style.display = divider.dataset.year === activeFilters.year && visibleYears.has(divider.dataset.year) ? 'flex' : 'none';
+      }
+    });
+
+    // Update showing count
+    showingPapers.textContent = visibleCount;
+
+    // Show no results message if needed
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  // Initial count
+  showingPapers.textContent = papers.length;
+});
+</script>
 
 
