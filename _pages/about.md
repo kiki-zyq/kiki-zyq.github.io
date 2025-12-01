@@ -31,33 +31,22 @@ I am also currently working on the development of **CUFE's Industrial and Region
   transform: translateY(-3px);
 }
 
-.paper-image-container {
-  position: relative;
+.paper-left {
   flex: 0 0 280px;
   margin-right: 25px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.paper-image {
-  width: 100%;
-  height: auto;
-  transition: transform 0.4s ease;
-}
-
-.paper-image-container:hover .paper-image {
-  transform: scale(1.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .paper-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  display: inline-block;
   padding: 5px 12px;
   border-radius: 5px;
   font-size: 12px;
   font-weight: bold;
   color: white;
+  margin-bottom: 10px;
 }
 
 .badge-arxiv {
@@ -70,6 +59,22 @@ I am also currently working on the development of **CUFE's Industrial and Region
 
 .badge-underreview {
   background: linear-gradient(135deg, #ff9800, #e65100);
+}
+
+.paper-image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.paper-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.paper-image-container:hover .paper-image {
+  transform: scale(1.05);
 }
 
 .paper-content {
@@ -135,8 +140,9 @@ I am also currently working on the development of **CUFE's Industrial and Region
 }
 
 .btn-arxiv:hover {
-  background: white;
+  background: #fff;
   color: #b31b1b;
+  border-color: #b31b1b;
 }
 
 .btn-github {
@@ -146,8 +152,9 @@ I am also currently working on the development of **CUFE's Industrial and Region
 }
 
 .btn-github:hover {
-  background: white;
+  background: #fff;
   color: #24292e;
+  border-color: #24292e;
 }
 
 .btn-project {
@@ -157,8 +164,8 @@ I am also currently working on the development of **CUFE's Industrial and Region
 }
 
 .btn-project:hover {
-  background: white;
-  color: #000;
+  background: #fff;
+  color: #bfa633;
   border-color: #EBCF53;
 }
 
@@ -169,8 +176,9 @@ I am also currently working on the development of **CUFE's Industrial and Region
 }
 
 .btn-pdf:hover {
-  background: white;
+  background: #fff;
   color: #e74c3c;
+  border-color: #e74c3c;
 }
 </style>
 
