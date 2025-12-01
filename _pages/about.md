@@ -127,7 +127,7 @@ I am also currently working on the development of **CUFE's Industrial and Region
   font-size: 13px;
   font-weight: 600;
   text-decoration: none !important;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-arxiv {
@@ -139,8 +139,6 @@ I am also currently working on the development of **CUFE's Industrial and Region
 .btn-arxiv:hover {
   background-color: #ffffff !important;
   color: #b31b1b !important;
-  border: 2px solid #b31b1b !important;
-  transform: translateY(-2px);
 }
 
 .btn-github {
@@ -152,8 +150,6 @@ I am also currently working on the development of **CUFE's Industrial and Region
 .btn-github:hover {
   background-color: #ffffff !important;
   color: #24292e !important;
-  border: 2px solid #24292e !important;
-  transform: translateY(-2px);
 }
 
 .btn-project {
@@ -165,8 +161,6 @@ I am also currently working on the development of **CUFE's Industrial and Region
 .btn-project:hover {
   background-color: #ffffff !important;
   color: #d4b84a !important;
-  border: 2px solid #EBCF53 !important;
-  transform: translateY(-2px);
 }
 
 .btn-pdf {
@@ -178,8 +172,6 @@ I am also currently working on the development of **CUFE's Industrial and Region
 .btn-pdf:hover {
   background-color: #ffffff !important;
   color: #e74c3c !important;
-  border: 2px solid #e74c3c !important;
-  transform: translateY(-2px);
 }
 </style>
 
