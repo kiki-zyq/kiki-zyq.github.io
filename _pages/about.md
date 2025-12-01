@@ -138,7 +138,7 @@ I am also currently working on the development of **CUFE's Industrial and Region
   color: #ffffff !important;
 }
 
-.btn-arxiv:hover {
+.paper-card .paper-links.btn-arxiv:hover {
   background-color: #ffffff !important;
   color: #b31b1b !important;
   border-color: #b31b1b !important;
