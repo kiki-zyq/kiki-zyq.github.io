@@ -223,6 +223,9 @@ author_profile: true
   color: #555;
   cursor: pointer;
   transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  z-index: 10;
 }
 
 .paper-tag:hover {
@@ -306,31 +309,6 @@ author_profile: true
   color: #9b59b6 !important;
 }
 
-/* ===== Statistics ===== */
-.stats-bar {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px;
-  color: white;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.stat-label {
-  font-size: 12px;
-  opacity: 0.9;
-}
-
 /* ===== No Results ===== */
 .no-results {
   text-align: center;
@@ -364,18 +342,6 @@ author_profile: true
   }
 }
 </style>
-
-<!-- Statistics Bar -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-number" id="total-papers">2</div>
-    <div class="stat-label">Total Papers</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number" id="showing-papers">2</div>
-    <div class="stat-label">Showing</div>
-  </div>
-</div>
 
 <!-- Filter Section -->
 <div class="filter-section">
@@ -431,10 +397,10 @@ author_profile: true
         <span class="highlight">Yunqi Zhou*</span>, Chengjie Jiang*, Chun Yuan, Jing Li†
       </div>
       <div class="paper-tags">
-        <span class="paper-tag" data-topic="remote-sensing">Remote Sensing</span>
-        <span class="paper-tag" data-topic="vqa">VQA</span>
-        <span class="paper-tag" data-topic="vlm">VLM</span>
-        <span class="paper-tag" data-topic="training-free">Training-Free</span>
+        <span class="paper-tag" onclick="filterByTopic('remote-sensing')">Remote Sensing</span>
+        <span class="paper-tag" onclick="filterByTopic('vqa')">VQA</span>
+        <span class="paper-tag" onclick="filterByTopic('vlm')">VLM</span>
+        <span class="paper-tag" onclick="filterByTopic('training-free')">Training-Free</span>
       </div>
       <div class="paper-links">
         <a href="https://arxiv.org/abs/2511.20460" class="btn btn-arxiv">arXiv</a>
@@ -462,9 +428,9 @@ author_profile: true
         Chengjie Jiang, <span class="highlight">Yunqi Zhou</span>, Jiafeng Yan, Jing Li†, Jiayang Li, Yue Zhou, Hongjie He, Jonathan Li
       </div>
       <div class="paper-tags">
-        <span class="paper-tag" data-topic="remote-sensing">Remote Sensing</span>
-        <span class="paper-tag" data-topic="geospatial">Geospatial</span>
-        <span class="paper-tag" data-topic="reasoning">Reasoning</span>
+        <span class="paper-tag" onclick="filterByTopic('remote-sensing')">Remote Sensing</span>
+        <span class="paper-tag" onclick="filterByTopic('geospatial')">Geospatial</span>
+        <span class="paper-tag" onclick="filterByTopic('reasoning')">Reasoning</span>
       </div>
       <div class="paper-links">
         <a href="https://arxiv.org/abs/2508.17102" class="btn btn-arxiv">arXiv</a>
@@ -480,94 +446,93 @@ author_profile: true
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const papers = document.querySelectorAll('.paper-card');
-  const yearDividers = document.querySelectorAll('.year-divider');
-  const noResults = document.getElementById('no-results');
-  const showingPapers = document.getElementById('showing-papers');
-  
-  let activeFilters = {
-    year: 'all',
-    topic: 'all'
-  };
+(function() {
+  var defined = false;
 
-  // Filter button click handler
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const filterType = this.dataset.type;
-      const filterValue = this.dataset.filter;
-      
-      // Update active state for this filter group
-      document.querySelectorAll(`.filter-btn[data-type="${filterType}"]`).forEach(b => {
-        b.classList.remove('active');
+  function defineFilterFunctions() {
+    if (defined) return;
+    defined = true;
+
+    var activeFilters = {
+      year: 'all',
+      topic: 'all'
+    };
+
+    function applyFilters() {
+      var papers = document.querySelectorAll('.paper-card');
+      var yearDividers = document.querySelectorAll('.year-divider');
+      var noResults = document.getElementById('no-results');
+      var visibleCount = 0;
+      var visibleYears = {};
+
+      papers.forEach(function(paper) {
+        var paperYear = paper.getAttribute('data-year');
+        var paperTopics = paper.getAttribute('data-topics').split(',');
+
+        var yearMatch = activeFilters.year === 'all' || paperYear === activeFilters.year;
+        var topicMatch = activeFilters.topic === 'all' || paperTopics.indexOf(activeFilters.topic) !== -1;
+
+        if (yearMatch && topicMatch) {
+          paper.classList.remove('hidden');
+          visibleCount++;
+          visibleYears[paperYear] = true;
+        } else {
+          paper.classList.add('hidden');
+        }
       });
-      this.classList.add('active');
-      
-      // Update active filters
-      activeFilters[filterType] = filterValue;
-      
-      // Apply filters
-      applyFilters();
-    });
-  });
 
-  // Tag click handler
-  document.querySelectorAll('.paper-tag').forEach(tag => {
-    tag.addEventListener('click', function() {
-      const topic = this.dataset.topic;
-      
+      yearDividers.forEach(function(divider) {
+        var dividerYear = divider.getAttribute('data-year');
+        if (activeFilters.year === 'all') {
+          divider.style.display = visibleYears[dividerYear] ? 'flex' : 'none';
+        } else {
+          divider.style.display = (dividerYear === activeFilters.year && visibleYears[dividerYear]) ? 'flex' : 'none';
+        }
+      });
+
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    // Filter button click handler
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filterType = this.getAttribute('data-type');
+        var filterValue = this.getAttribute('data-filter');
+
+        // Update active state
+        document.querySelectorAll('.filter-btn[data-type="' + filterType + '"]').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        activeFilters[filterType] = filterValue;
+        applyFilters();
+      });
+    });
+
+    // Global function for tag clicks
+    window.filterByTopic = function(topic) {
       // Update topic filter buttons
-      document.querySelectorAll('.filter-btn[data-type="topic"]').forEach(b => {
+      document.querySelectorAll('.filter-btn[data-type="topic"]').forEach(function(b) {
         b.classList.remove('active');
-        if (b.dataset.filter === topic) {
+        if (b.getAttribute('data-filter') === topic) {
           b.classList.add('active');
         }
       });
-      
+
       activeFilters.topic = topic;
       applyFilters();
-    });
-  });
-
-  function applyFilters() {
-    let visibleCount = 0;
-    let visibleYears = new Set();
-
-    papers.forEach(paper => {
-      const paperYear = paper.dataset.year;
-      const paperTopics = paper.dataset.topics.split(',');
-
-      const yearMatch = activeFilters.year === 'all' || paperYear === activeFilters.year;
-      const topicMatch = activeFilters.topic === 'all' || paperTopics.includes(activeFilters.topic);
-
-      if (yearMatch && topicMatch) {
-        paper.classList.remove('hidden');
-        visibleCount++;
-        visibleYears.add(paperYear);
-      } else {
-        paper.classList.add('hidden');
-      }
-    });
-
-    // Show/hide year dividers
-    yearDividers.forEach(divider => {
-      if (activeFilters.year === 'all') {
-        divider.style.display = visibleYears.has(divider.dataset.year) ? 'flex' : 'none';
-      } else {
-        divider.style.display = divider.dataset.year === activeFilters.year && visibleYears.has(divider.dataset.year) ? 'flex' : 'none';
-      }
-    });
-
-    // Update showing count
-    showingPapers.textContent = visibleCount;
-
-    // Show no results message if needed
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    };
   }
 
-  // Initial count
-  showingPapers.textContent = papers.length;
-});
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', defineFilterFunctions);
+  } else {
+    defineFilterFunctions();
+  }
+})();
 </script>
-
-
