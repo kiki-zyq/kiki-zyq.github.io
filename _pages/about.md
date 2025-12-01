@@ -118,66 +118,70 @@ I am also currently working on the development of **CUFE's Industrial and Region
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-block;
-  padding: 8px 16px;
-  min-width: 100px;
-  text-align: center;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
+/* ========== 按钮基础样式（覆盖模板默认样式） ========== */
+.paper-card .paper-links a.btn {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  min-width: 100px !important;
+  text-align: center !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
   text-decoration: none !important;
-  box-sizing: border-box;
-  border: 2px solid transparent;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }
 
-.btn-arxiv {
-  background-color: #b31b1b;
-  border-color: #b31b1b;
+/* ========== arXiv 按钮 ========== */
+.paper-card .paper-links a.btn.btn-arxiv {
+  background-color: #b31b1b !important;
+  border: 2px solid #b31b1b !important;
   color: #ffffff !important;
 }
 
-.paper-card .paper-links.btn-arxiv:hover {
+.paper-card .paper-links a.btn.btn-arxiv:hover {
   background-color: #ffffff !important;
   color: #b31b1b !important;
-  border-color: #b31b1b !important;
+  border: 2px solid #b31b1b !important;
 }
 
-.btn-github {
-  background-color: #24292e;
-  border-color: #24292e;
+/* ========== GitHub 按钮 ========== */
+.paper-card .paper-links a.btn.btn-github {
+  background-color: #24292e !important;
+  border: 2px solid #24292e !important;
   color: #ffffff !important;
 }
 
-.btn-github:hover {
+.paper-card .paper-links a.btn.btn-github:hover {
   background-color: #ffffff !important;
   color: #24292e !important;
-  border-color: #24292e !important;
+  border: 2px solid #24292e !important;
 }
 
-.btn-project {
-  background-color: #EBCF53;
-  border-color: #EBCF53;
+/* ========== Project 按钮 ========== */
+.paper-card .paper-links a.btn.btn-project {
+  background-color: #EBCF53 !important;
+  border: 2px solid #EBCF53 !important;
   color: #000000 !important;
 }
 
-.btn-project:hover {
+.paper-card .paper-links a.btn.btn-project:hover {
   background-color: #ffffff !important;
   color: #d4b84a !important;
-  border-color: #EBCF53 !important;
+  border: 2px solid #EBCF53 !important;
 }
 
-.btn-pdf {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+/* ========== PDF 按钮 ========== */
+.paper-card .paper-links a.btn.btn-pdf {
+  background-color: #e74c3c !important;
+  border: 2px solid #e74c3c !important;
   color: #ffffff !important;
 }
 
-.btn-pdf:hover {
+.paper-card .paper-links a.btn.btn-pdf:hover {
   background-color: #ffffff !important;
   color: #e74c3c !important;
-  border-color: #e74c3c !important;
+  border: 2px solid #e74c3c !important;
 }
 </style>
 
