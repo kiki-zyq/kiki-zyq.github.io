@@ -7,22 +7,22 @@ author_profile: true
 
 <style>
 /* ===== Filter Section ===== */
-.filter-section {
+.pub-filter-section {
   margin-bottom: 30px;
   padding: 20px;
   background: #f5f5f5;
   border-radius: 10px;
 }
 
-.filter-group {
+.pub-filter-group {
   margin-bottom: 15px;
 }
 
-.filter-group:last-child {
+.pub-filter-group:last-child {
   margin-bottom: 0;
 }
 
-.filter-label {
+.pub-filter-label {
   font-weight: bold;
   font-size: 14px;
   color: #333;
@@ -30,13 +30,13 @@ author_profile: true
   display: block;
 }
 
-.filter-buttons {
+.pub-filter-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.filter-btn {
+.pub-filter-btn {
   padding: 6px 14px;
   border: 2px solid #ddd;
   border-radius: 20px;
@@ -47,12 +47,12 @@ author_profile: true
   color: #555;
 }
 
-.filter-btn:hover {
+.pub-filter-btn:hover {
   border-color: #EBCF53;
   color: #333;
 }
 
-.filter-btn.active {
+.pub-filter-btn.active {
   background: #EBCF53;
   border-color: #EBCF53;
   color: #000;
@@ -60,27 +60,27 @@ author_profile: true
 }
 
 /* ===== Year Divider ===== */
-.year-divider {
+.pub-year-divider {
   display: flex;
   align-items: center;
   margin: 30px 0 20px 0;
 }
 
-.year-divider .year-text {
+.pub-year-divider .year-text {
   font-size: 24px;
   font-weight: bold;
   color: #333;
   padding-right: 20px;
 }
 
-.year-divider .year-line {
+.pub-year-divider .year-line {
   flex: 1;
   height: 2px;
   background: linear-gradient(to right, #EBCF53, transparent);
 }
 
 /* ===== Paper Card ===== */
-.paper-card {
+.pub-paper-card {
   display: flex;
   margin-bottom: 25px;
   padding: 20px;
@@ -89,16 +89,16 @@ author_profile: true
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.paper-card:hover {
+.pub-paper-card:hover {
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
 
-.paper-card.hidden {
-  display: none;
+.pub-paper-card.hidden {
+  display: none !important;
 }
 
-.paper-image-container {
+.pub-paper-image-container {
   position: relative;
   flex: 0 0 260px;
   width: 260px;
@@ -109,7 +109,7 @@ author_profile: true
   background: #e0e0e0;
 }
 
-.paper-badge {
+.pub-paper-badge {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -121,63 +121,63 @@ author_profile: true
   z-index: 2;
 }
 
-.badge-arxiv {
+.pub-badge-arxiv {
   background: linear-gradient(135deg, #b31b1b, #8b0000);
 }
 
-.badge-cvpr {
+.pub-badge-cvpr {
   background: linear-gradient(135deg, #0066cc, #004999);
 }
 
-.badge-iccv {
+.pub-badge-iccv {
   background: linear-gradient(135deg, #6a1b9a, #4a148c);
 }
 
-.badge-eccv {
+.pub-badge-eccv {
   background: linear-gradient(135deg, #00695c, #004d40);
 }
 
-.badge-neurips {
+.pub-badge-neurips {
   background: linear-gradient(135deg, #5c6bc0, #3949ab);
 }
 
-.badge-icml {
+.pub-badge-icml {
   background: linear-gradient(135deg, #ef6c00, #e65100);
 }
 
-.badge-aaai {
+.pub-badge-aaai {
   background: linear-gradient(135deg, #1565c0, #0d47a1);
 }
 
-.badge-underreview {
+.pub-badge-underreview {
   background: linear-gradient(135deg, #ff9800, #e65100);
 }
 
-.paper-image {
+.pub-paper-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.paper-image-container:hover .paper-image {
+.pub-paper-image-container:hover .pub-paper-image {
   transform: scale(1.08);
 }
 
-.paper-content {
+.pub-paper-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.paper-meta {
+.pub-paper-meta {
   font-size: 12px;
   color: #888;
   margin-bottom: 8px;
 }
 
-.paper-title {
+.pub-paper-title {
   font-size: 17px;
   font-weight: bold;
   color: #333;
@@ -185,37 +185,28 @@ author_profile: true
   line-height: 1.4;
 }
 
-.paper-authors {
+.pub-paper-authors {
   font-size: 13px;
   color: #666;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
-.paper-authors .highlight {
+.pub-paper-authors .highlight {
   color: #d4a800;
   font-weight: bold;
-}
-
-.paper-authors a {
-  color: #d4a800;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.paper-authors a:hover {
-  text-decoration: underline;
 }
 
 /* ===== Tags ===== */
-.paper-tags {
+.pub-paper-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 12px;
 }
 
-.paper-tag {
+.pub-paper-tag {
+  display: inline-block;
   padding: 3px 10px;
   background: #e8e8e8;
   border-radius: 12px;
@@ -223,24 +214,23 @@ author_profile: true
   color: #555;
   cursor: pointer;
   transition: all 0.2s ease;
-  user-select: none;
-  position: relative;
-  z-index: 10;
+  text-decoration: none;
 }
 
-.paper-tag:hover {
+.pub-paper-tag:hover {
   background: #EBCF53;
   color: #000;
+  text-decoration: none;
 }
 
 /* ===== Paper Links ===== */
-.paper-links {
+.pub-paper-links {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.btn {
+.pub-btn {
   display: inline-block;
   padding: 6px 14px;
   min-width: 80px;
@@ -254,63 +244,52 @@ author_profile: true
   transition: all 0.3s ease;
 }
 
-.btn-arxiv {
+.pub-btn-arxiv {
   background-color: #b31b1b;
   border-color: #b31b1b;
   color: #ffffff !important;
 }
 
-.btn-arxiv:hover {
+.pub-btn-arxiv:hover {
   background-color: #ffffff !important;
   color: #b31b1b !important;
 }
 
-.btn-github {
+.pub-btn-github {
   background-color: #24292e;
   border-color: #24292e;
   color: #ffffff !important;
 }
 
-.btn-github:hover {
+.pub-btn-github:hover {
   background-color: #ffffff !important;
   color: #24292e !important;
 }
 
-.btn-project {
+.pub-btn-project {
   background-color: #EBCF53;
   border-color: #EBCF53;
   color: #000000 !important;
 }
 
-.btn-project:hover {
+.pub-btn-project:hover {
   background-color: #ffffff !important;
   color: #d4b84a !important;
 }
 
-.btn-pdf {
+.pub-btn-pdf {
   background-color: #e74c3c;
   border-color: #e74c3c;
   color: #ffffff !important;
 }
 
-.btn-pdf:hover {
+.pub-btn-pdf:hover {
   background-color: #ffffff !important;
   color: #e74c3c !important;
 }
 
-.btn-video {
-  background-color: #9b59b6;
-  border-color: #9b59b6;
-  color: #ffffff !important;
-}
-
-.btn-video:hover {
-  background-color: #ffffff !important;
-  color: #9b59b6 !important;
-}
-
 /* ===== No Results ===== */
-.no-results {
+.pub-no-results {
   text-align: center;
   padding: 40px;
   color: #888;
@@ -320,11 +299,11 @@ author_profile: true
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .paper-card {
+  .pub-paper-card {
     flex-direction: column;
   }
   
-  .paper-image-container {
+  .pub-paper-image-container {
     width: 100%;
     flex: none;
     height: 180px;
@@ -332,11 +311,11 @@ author_profile: true
     margin-bottom: 15px;
   }
   
-  .filter-buttons {
+  .pub-filter-buttons {
     gap: 6px;
   }
   
-  .filter-btn {
+  .pub-filter-btn {
     padding: 5px 10px;
     font-size: 12px;
   }
@@ -344,96 +323,90 @@ author_profile: true
 </style>
 
 <!-- Filter Section -->
-<div class="filter-section">
-  <div class="filter-group">
-    <span class="filter-label">📅 Year</span>
-    <div class="filter-buttons" id="year-filters">
-      <button class="filter-btn active" data-filter="all" data-type="year">All</button>
-      <button class="filter-btn" data-filter="2025" data-type="year">2025</button>
-      <!-- Add more years as needed: 2026, 2027, etc. -->
+<div class="pub-filter-section">
+  <div class="pub-filter-group">
+    <span class="pub-filter-label">📅 Year</span>
+    <div class="pub-filter-buttons" id="pub-year-filters">
+      <button class="pub-filter-btn active" data-year="all">All</button>
+      <button class="pub-filter-btn" data-year="2025">2025</button>
+      <!-- Add more years as needed -->
     </div>
   </div>
   
-  <div class="filter-group">
-    <span class="filter-label">🏷️ Topics</span>
-    <div class="filter-buttons" id="topic-filters">
-      <button class="filter-btn active" data-filter="all" data-type="topic">All</button>
-      <button class="filter-btn" data-filter="remote-sensing" data-type="topic">Remote Sensing</button>
-      <button class="filter-btn" data-filter="vqa" data-type="topic">VQA</button>
-      <button class="filter-btn" data-filter="vlm" data-type="topic">VLM</button>
-      <button class="filter-btn" data-filter="multimodal" data-type="topic">Multimodal</button>
-      <button class="filter-btn" data-filter="training-free" data-type="topic">Training-Free</button>
-      <button class="filter-btn" data-filter="geospatial" data-type="topic">Geospatial</button>
-      <button class="filter-btn" data-filter="reasoning" data-type="topic">Reasoning</button>
+  <div class="pub-filter-group">
+    <span class="pub-filter-label">🏷️ Topics</span>
+    <div class="pub-filter-buttons" id="pub-topic-filters">
+      <button class="pub-filter-btn active" data-topic="all">All</button>
+      <button class="pub-filter-btn" data-topic="remote-sensing">Remote Sensing</button>
+      <button class="pub-filter-btn" data-topic="vqa">VQA</button>
+      <button class="pub-filter-btn" data-topic="vlm">VLM</button>
+      <button class="pub-filter-btn" data-topic="multimodal">Multimodal</button>
+      <button class="pub-filter-btn" data-topic="training-free">Training-Free</button>
+      <button class="pub-filter-btn" data-topic="geospatial">Geospatial</button>
+      <button class="pub-filter-btn" data-topic="reasoning">Reasoning</button>
       <!-- Add more topics as needed -->
     </div>
   </div>
 </div>
 
 <!-- Papers Container -->
-<div id="papers-container">
+<div id="pub-papers-container">
 
   <!-- ==================== 2025 ==================== -->
-  <div class="year-divider" data-year="2025">
+  <div class="pub-year-divider" data-year="2025">
     <span class="year-text">2025</span>
     <div class="year-line"></div>
   </div>
 
   <!-- Paper: ZoomSearch -->
-  <div class="paper-card" 
-       data-year="2025" 
-       data-month="11"
-       data-topics="remote-sensing,vqa,multimodal,vlm,training-free,reasoning">
-    <div class="paper-image-container">
-      <span class="paper-badge badge-arxiv">arXiv</span>
-      <img class="paper-image" src="./images/paper/zoomsearch.jpg" alt="ZoomSearch">
+  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,vqa,multimodal,vlm,training-free,reasoning">
+    <div class="pub-paper-image-container">
+      <span class="pub-paper-badge pub-badge-arxiv">arXiv</span>
+      <img class="pub-paper-image" src="/images/paper/zoomsearch.jpg" alt="ZoomSearch">
     </div>
-    <div class="paper-content">
-      <div class="paper-meta">Nov 2025 · arXiv Preprint</div>
-      <div class="paper-title">
+    <div class="pub-paper-content">
+      <div class="pub-paper-meta">Nov 2025 · arXiv Preprint</div>
+      <div class="pub-paper-title">
         Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search
       </div>
-      <div class="paper-authors">
+      <div class="pub-paper-authors">
         <span class="highlight">Yunqi Zhou*</span>, Chengjie Jiang*, Chun Yuan, Jing Li†
       </div>
-      <div class="paper-tags">
-        <span class="paper-tag" onclick="filterByTopic('remote-sensing')">Remote Sensing</span>
-        <span class="paper-tag" onclick="filterByTopic('vqa')">VQA</span>
-        <span class="paper-tag" onclick="filterByTopic('vlm')">VLM</span>
-        <span class="paper-tag" onclick="filterByTopic('training-free')">Training-Free</span>
+      <div class="pub-paper-tags">
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="remote-sensing">Remote Sensing</a>
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="vqa">VQA</a>
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="vlm">VLM</a>
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="training-free">Training-Free</a>
       </div>
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2511.20460" class="btn btn-arxiv">arXiv</a>
-        <a href="https://github.com/kiki-zyq/Zoom-Search" class="btn btn-github">GitHub</a>
-        <a href="https://kiki-zyq.github.io/ZoomSearch/" class="btn btn-project">Project</a>
+      <div class="pub-paper-links">
+        <a href="https://arxiv.org/abs/2511.20460" class="pub-btn pub-btn-arxiv">arXiv</a>
+        <a href="https://github.com/kiki-zyq/Zoom-Search" class="pub-btn pub-btn-github">GitHub</a>
+        <a href="https://kiki-zyq.github.io/ZoomSearch/" class="pub-btn pub-btn-project">Project</a>
       </div>
     </div>
   </div>
 
   <!-- Paper: GRASP -->
-  <div class="paper-card" 
-       data-year="2025" 
-       data-month="08"
-       data-topics="remote-sensing,multimodal,geospatial,reasoning">
-    <div class="paper-image-container">
-      <span class="paper-badge badge-arxiv">arXiv</span>
-      <img class="paper-image" src="./images/paper/grasp.png" alt="GRASP">
+  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,multimodal,geospatial,reasoning">
+    <div class="pub-paper-image-container">
+      <span class="pub-paper-badge pub-badge-arxiv">arXiv</span>
+      <img class="pub-paper-image" src="/images/paper/grasp.png" alt="GRASP">
     </div>
-    <div class="paper-content">
-      <div class="paper-meta">Aug 2025 · arXiv Preprint</div>
-      <div class="paper-title">
+    <div class="pub-paper-content">
+      <div class="pub-paper-meta">Aug 2025 · arXiv Preprint</div>
+      <div class="pub-paper-title">
         GRASP: Geospatial pixel Reasoning viA Structured Policy learning
       </div>
-      <div class="paper-authors">
+      <div class="pub-paper-authors">
         Chengjie Jiang, <span class="highlight">Yunqi Zhou</span>, Jiafeng Yan, Jing Li†, Jiayang Li, Yue Zhou, Hongjie He, Jonathan Li
       </div>
-      <div class="paper-tags">
-        <span class="paper-tag" onclick="filterByTopic('remote-sensing')">Remote Sensing</span>
-        <span class="paper-tag" onclick="filterByTopic('geospatial')">Geospatial</span>
-        <span class="paper-tag" onclick="filterByTopic('reasoning')">Reasoning</span>
+      <div class="pub-paper-tags">
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="remote-sensing">Remote Sensing</a>
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="geospatial">Geospatial</a>
+        <a class="pub-paper-tag" href="javascript:void(0)" data-topic="reasoning">Reasoning</a>
       </div>
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2508.17102" class="btn btn-arxiv">arXiv</a>
+      <div class="pub-paper-links">
+        <a href="https://arxiv.org/abs/2508.17102" class="pub-btn pub-btn-arxiv">arXiv</a>
       </div>
     </div>
   </div>
@@ -441,98 +414,112 @@ author_profile: true
 </div>
 
 <!-- No Results Message -->
-<div class="no-results" id="no-results">
+<div class="pub-no-results" id="pub-no-results">
   🔍 No papers found matching your filters.
 </div>
 
-<script>
-(function() {
-  var defined = false;
-
-  function defineFilterFunctions() {
-    if (defined) return;
-    defined = true;
-
-    var activeFilters = {
-      year: 'all',
-      topic: 'all'
-    };
-
-    function applyFilters() {
-      var papers = document.querySelectorAll('.paper-card');
-      var yearDividers = document.querySelectorAll('.year-divider');
-      var noResults = document.getElementById('no-results');
-      var visibleCount = 0;
-      var visibleYears = {};
-
-      papers.forEach(function(paper) {
-        var paperYear = paper.getAttribute('data-year');
-        var paperTopics = paper.getAttribute('data-topics').split(',');
-
-        var yearMatch = activeFilters.year === 'all' || paperYear === activeFilters.year;
-        var topicMatch = activeFilters.topic === 'all' || paperTopics.indexOf(activeFilters.topic) !== -1;
-
-        if (yearMatch && topicMatch) {
-          paper.classList.remove('hidden');
-          visibleCount++;
-          visibleYears[paperYear] = true;
-        } else {
-          paper.classList.add('hidden');
-        }
-      });
-
-      yearDividers.forEach(function(divider) {
-        var dividerYear = divider.getAttribute('data-year');
-        if (activeFilters.year === 'all') {
-          divider.style.display = visibleYears[dividerYear] ? 'flex' : 'none';
-        } else {
-          divider.style.display = (dividerYear === activeFilters.year && visibleYears[dividerYear]) ? 'flex' : 'none';
-        }
-      });
-
-      if (noResults) {
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+<script type="text/javascript">
+// Wait for page to fully load
+window.addEventListener('load', function() {
+  
+  // Current filter state
+  var currentYear = 'all';
+  var currentTopic = 'all';
+  
+  // Apply filters function
+  function applyFilters() {
+    var papers = document.querySelectorAll('.pub-paper-card');
+    var yearDividers = document.querySelectorAll('.pub-year-divider');
+    var noResults = document.getElementById('pub-no-results');
+    var visibleCount = 0;
+    var visibleYears = {};
+    
+    for (var i = 0; i < papers.length; i++) {
+      var paper = papers[i];
+      var paperYear = paper.getAttribute('data-year');
+      var paperTopics = paper.getAttribute('data-topics').split(',');
+      
+      var yearMatch = (currentYear === 'all') || (paperYear === currentYear);
+      var topicMatch = (currentTopic === 'all') || (paperTopics.indexOf(currentTopic) !== -1);
+      
+      if (yearMatch && topicMatch) {
+        paper.classList.remove('hidden');
+        visibleCount++;
+        visibleYears[paperYear] = true;
+      } else {
+        paper.classList.add('hidden');
       }
     }
-
-    // Filter button click handler
-    var filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var filterType = this.getAttribute('data-type');
-        var filterValue = this.getAttribute('data-filter');
-
-        // Update active state
-        document.querySelectorAll('.filter-btn[data-type="' + filterType + '"]').forEach(function(b) {
-          b.classList.remove('active');
-        });
-        this.classList.add('active');
-
-        activeFilters[filterType] = filterValue;
-        applyFilters();
-      });
-    });
-
-    // Global function for tag clicks
-    window.filterByTopic = function(topic) {
-      // Update topic filter buttons
-      document.querySelectorAll('.filter-btn[data-type="topic"]').forEach(function(b) {
-        b.classList.remove('active');
-        if (b.getAttribute('data-filter') === topic) {
-          b.classList.add('active');
-        }
-      });
-
-      activeFilters.topic = topic;
+    
+    // Show/hide year dividers
+    for (var j = 0; j < yearDividers.length; j++) {
+      var divider = yearDividers[j];
+      var dividerYear = divider.getAttribute('data-year');
+      if (currentYear === 'all') {
+        divider.style.display = visibleYears[dividerYear] ? 'flex' : 'none';
+      } else {
+        divider.style.display = (dividerYear === currentYear && visibleYears[dividerYear]) ? 'flex' : 'none';
+      }
+    }
+    
+    // Show no results message
+    if (noResults) {
+      noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+  }
+  
+  // Year filter buttons
+  var yearBtns = document.querySelectorAll('#pub-year-filters .pub-filter-btn');
+  for (var i = 0; i < yearBtns.length; i++) {
+    yearBtns[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      // Remove active from all year buttons
+      for (var j = 0; j < yearBtns.length; j++) {
+        yearBtns[j].classList.remove('active');
+      }
+      // Add active to clicked button
+      this.classList.add('active');
+      currentYear = this.getAttribute('data-year');
       applyFilters();
-    };
+    });
   }
-
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', defineFilterFunctions);
-  } else {
-    defineFilterFunctions();
+  
+  // Topic filter buttons
+  var topicBtns = document.querySelectorAll('#pub-topic-filters .pub-filter-btn');
+  for (var i = 0; i < topicBtns.length; i++) {
+    topicBtns[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      // Remove active from all topic buttons
+      for (var j = 0; j < topicBtns.length; j++) {
+        topicBtns[j].classList.remove('active');
+      }
+      // Add active to clicked button
+      this.classList.add('active');
+      currentTopic = this.getAttribute('data-topic');
+      applyFilters();
+    });
   }
-})();
+  
+  // Paper tag clicks
+  var paperTags = document.querySelectorAll('.pub-paper-tag');
+  for (var i = 0; i < paperTags.length; i++) {
+    paperTags[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var topic = this.getAttribute('data-topic');
+      
+      // Update topic buttons
+      for (var j = 0; j < topicBtns.length; j++) {
+        topicBtns[j].classList.remove('active');
+        if (topicBtns[j].getAttribute('data-topic') === topic) {
+          topicBtns[j].classList.add('active');
+        }
+      }
+      
+      currentTopic = topic;
+      applyFilters();
+    });
+  }
+  
+});
 </script>
