@@ -9,7 +9,8 @@ author_profile: true
 .pub-filter-section {
   margin-bottom: 30px;
   padding: 20px;
-  background: #f5f5f5;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
   border-radius: 10px;
 }
 
@@ -24,7 +25,7 @@ author_profile: true
 .pub-filter-label {
   font-weight: bold;
   font-size: 14px;
-  color: #333;
+  color: var(--global-text-color);
   margin-bottom: 10px;
   display: block;
 }
@@ -37,25 +38,25 @@ author_profile: true
 
 .pub-filter-btn {
   padding: 6px 14px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--global-border-color);
   border-radius: 20px;
-  background: #fff;
+  background: var(--global-bg-color);
   font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #555;
+  color: var(--global-text-color);
   outline: none;
 }
 
 .pub-filter-btn:hover {
-  border-color: #EBCF53;
-  color: #333;
+  border-color: var(--global-link-color);
+  color: var(--global-link-color);
 }
 
 .pub-filter-btn.active {
-  background: #EBCF53 !important;
-  border-color: #EBCF53 !important;
-  color: #000 !important;
+  background: var(--global-link-color) !important;
+  border-color: var(--global-link-color) !important;
+  color: #fff !important;
   font-weight: 600;
 }
 
@@ -68,14 +69,14 @@ author_profile: true
 .pub-year-divider .year-text {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: var(--global-text-color);
   padding-right: 20px;
 }
 
 .pub-year-divider .year-line {
   flex: 1;
   height: 2px;
-  background: linear-gradient(to right, #EBCF53, transparent);
+  background: linear-gradient(to right, var(--global-link-color), transparent);
 }
 
 .pub-paper-card {
@@ -83,7 +84,8 @@ author_profile: true
   margin-bottom: 25px;
   padding: 20px;
   border-radius: 10px;
-  background: #f9f9f9;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
@@ -104,7 +106,7 @@ author_profile: true
   margin-right: 25px;
   border-radius: 8px;
   overflow: hidden;
-  background: #e0e0e0;
+  background: var(--global-border-color);
 }
 
 .pub-paper-badge {
@@ -148,27 +150,27 @@ author_profile: true
 
 .pub-paper-meta {
   font-size: 12px;
-  color: #888;
+  color: var(--global-text-color-light);
   margin-bottom: 8px;
 }
 
 .pub-paper-title {
   font-size: 17px;
   font-weight: bold;
-  color: #333;
+  color: var(--global-text-color);
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .pub-paper-authors {
   font-size: 13px;
-  color: #666;
+  color: var(--global-text-color-light);
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
 .pub-paper-authors .highlight {
-  color: #d4a800;
+  color: var(--global-link-color);
   font-weight: bold;
 }
 
@@ -182,10 +184,10 @@ author_profile: true
 .pub-paper-tag {
   display: inline-block;
   padding: 3px 10px;
-  background: #e8e8e8;
+  background: var(--global-border-color);
   border-radius: 12px;
   font-size: 11px;
-  color: #555;
+  color: var(--global-text-color);
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none !important;
@@ -193,8 +195,8 @@ author_profile: true
 }
 
 .pub-paper-tag:hover {
-  background: #EBCF53;
-  color: #000;
+  background: var(--global-link-color);
+  color: #fff;
 }
 
 .pub-paper-links {
@@ -223,7 +225,7 @@ author_profile: true
   color: #ffffff !important;
 }
 .pub-btn-arxiv:hover {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #b31b1b !important;
 }
 
@@ -233,18 +235,18 @@ author_profile: true
   color: #ffffff !important;
 }
 .pub-btn-github:hover {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #24292e !important;
 }
 
 .pub-btn-project {
-  background-color: #EBCF53;
-  border-color: #EBCF53;
-  color: #000000 !important;
+  background-color: var(--global-link-color);
+  border-color: var(--global-link-color);
+  color: #ffffff !important;
 }
 .pub-btn-project:hover {
-  background-color: #ffffff !important;
-  color: #d4b84a !important;
+  background-color: transparent !important;
+  color: var(--global-link-color) !important;
 }
 
 .pub-btn-pdf {
@@ -253,14 +255,14 @@ author_profile: true
   color: #ffffff !important;
 }
 .pub-btn-pdf:hover {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #e74c3c !important;
 }
 
 .pub-no-results {
   text-align: center;
   padding: 40px;
-  color: #888;
+  color: var(--global-text-color-light);
   font-size: 16px;
 }
 
@@ -302,10 +304,9 @@ author_profile: true
       <span class="pub-filter-btn" data-topic="remote-sensing">Remote Sensing</span>
       <span class="pub-filter-btn" data-topic="vqa">VQA</span>
       <span class="pub-filter-btn" data-topic="vlm">VLM</span>
-      <span class="pub-filter-btn" data-topic="multimodal">Multimodal</span>
       <span class="pub-filter-btn" data-topic="training-free">Training-Free</span>
-      <span class="pub-filter-btn" data-topic="geospatial">Geospatial</span>
-      <span class="pub-filter-btn" data-topic="reasoning">Reasoning</span>
+      <span class="pub-filter-btn" data-topic="geospatial">Reasoning Segmentation</span>
+      <span class="pub-filter-btn" data-topic="reasoning">RL</span>
     </div>
   </div>
 </div>
@@ -348,7 +349,7 @@ author_profile: true
   </div>
 
   <!-- Paper: GRASP -->
-  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,multimodal,geospatial,reasoning">
+  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,multimodal,Reasoning Segmentation,RL">
     <div class="pub-paper-image-container">
       <span class="pub-paper-badge pub-badge-arxiv">arXiv</span>
       <img class="pub-paper-image" src="/images/paper/grasp.png" alt="GRASP">
@@ -363,8 +364,8 @@ author_profile: true
       </div>
       <div class="pub-paper-tags">
         <span class="pub-paper-tag" data-tag-topic="remote-sensing">Remote Sensing</span>
-        <span class="pub-paper-tag" data-tag-topic="geospatial">Geospatial</span>
-        <span class="pub-paper-tag" data-tag-topic="reasoning">Reasoning</span>
+        <span class="pub-paper-tag" data-tag-topic="geospatial">Reasoning Segmentation</span>
+        <span class="pub-paper-tag" data-tag-topic="reasoning">RL</span>
       </div>
       <div class="pub-paper-links">
         <a href="https://arxiv.org/abs/2508.17102" class="pub-btn pub-btn-arxiv">arXiv</a>
