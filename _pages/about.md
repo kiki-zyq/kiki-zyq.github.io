@@ -221,6 +221,17 @@ I am also currently working on the development of **CUFE's Industrial and Region
   </div>
 </div>
 
+## 📬 Contact Me
+
+Feel free to reach out anytime! 💌  
+
+**Email:**  
+- 2023312247@email.cufe.edu.cn  
+- 13880155015@163.com  
+- 1823273293@qq.com
+
+**Github:**
+- https://github.com/kiki-zyq
 <!-- 
 ==============================================
 📝 使用说明 / How to Use:
