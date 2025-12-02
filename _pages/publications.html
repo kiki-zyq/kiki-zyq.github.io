@@ -160,6 +160,27 @@ author_profile: true
   color: var(--global-text-color);
   margin-bottom: 10px;
   line-height: 1.4;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pub-paper-title-text {
+  flex-shrink: 0;
+}
+
+.pub-citation-badge {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none !important;
+  flex-shrink: 0;
+}
+
+.pub-citation-badge img {
+  height: 18px;
+  vertical-align: middle;
+  border-radius: 3px;
 }
 
 .pub-paper-authors {
@@ -203,10 +224,13 @@ author_profile: true
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .pub-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 6px 14px;
   min-width: 80px;
   text-align: center;
@@ -217,6 +241,7 @@ author_profile: true
   box-sizing: border-box;
   border: 2px solid transparent;
   transition: all 0.3s ease;
+  gap: 6px;
 }
 
 .pub-btn-arxiv {
@@ -233,10 +258,16 @@ author_profile: true
   background-color: #24292e;
   border-color: #24292e;
   color: #ffffff !important;
+  padding: 4px 10px;
+  min-width: auto;
 }
 .pub-btn-github:hover {
-  background-color: transparent !important;
-  color: #24292e !important;
+  background-color: #333 !important;
+  border-color: #333 !important;
+}
+.pub-btn-github img {
+  height: 20px;
+  vertical-align: middle;
 }
 
 .pub-btn-project {
@@ -284,6 +315,11 @@ author_profile: true
     padding: 5px 10px;
     font-size: 12px;
   }
+  .pub-paper-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
 </style>
 
@@ -329,7 +365,10 @@ author_profile: true
     <div class="pub-paper-content">
       <div class="pub-paper-meta">Nov 2025 · arXiv Preprint</div>
       <div class="pub-paper-title">
-        Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search
+        <span class="pub-paper-title-text">Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search</span>
+        <a href="https://scholar.google.com/scholar?q=ZoomSearch+Training-Free+Ultra-HR+Remote+Sensing+VQA" class="pub-citation-badge" target="_blank" title="Google Scholar">
+          <img src="https://img.shields.io/badge/dynamic/json?url=https://api.semanticscholar.org/graph/v1/paper/arXiv:2511.20460?fields=citationCount&query=citationCount&label=cited&style=flat-square&logo=googlescholar&color=blue" alt="Citations">
+        </a>
       </div>
       <div class="pub-paper-authors">
         <span class="highlight">Yunqi Zhou*</span>, Chengjie Jiang*, Chun Yuan, Jing Li†
@@ -342,7 +381,9 @@ author_profile: true
       </div>
       <div class="pub-paper-links">
         <a href="https://arxiv.org/abs/2511.20460" class="pub-btn pub-btn-arxiv">arXiv</a>
-        <a href="https://github.com/kiki-zyq/ZoomSearch" class="pub-btn pub-btn-github">GitHub</a>
+        <a href="https://github.com/kiki-zyq/ZoomSearch" class="pub-btn pub-btn-github" target="_blank">
+          <img src="https://img.shields.io/github/stars/kiki-zyq/ZoomSearch?style=social" alt="GitHub Stars">
+        </a>
         <a href="https://kiki-zyq.github.io/Zoom-Search/" class="pub-btn pub-btn-project">Project</a>
       </div>
     </div>
@@ -357,7 +398,10 @@ author_profile: true
     <div class="pub-paper-content">
       <div class="pub-paper-meta">Aug 2025 · arXiv Preprint</div>
       <div class="pub-paper-title">
-        GRASP: Geospatial pixel Reasoning viA Structured Policy learning
+        <span class="pub-paper-title-text">GRASP: Geospatial pixel Reasoning viA Structured Policy learning</span>
+        <a href="https://scholar.google.com/scholar?q=GRASP+Geospatial+pixel+Reasoning+Structured+Policy" class="pub-citation-badge" target="_blank" title="Google Scholar">
+          <img src="https://img.shields.io/badge/dynamic/json?url=https://api.semanticscholar.org/graph/v1/paper/arXiv:2508.17102?fields=citationCount&query=citationCount&label=cited&style=flat-square&logo=googlescholar&color=blue" alt="Citations">
+        </a>
       </div>
       <div class="pub-paper-authors">
         Chengjie Jiang, <span class="highlight">Yunqi Zhou</span>, Jiafeng Yan, Jing Li†, Jiayang Li, Yue Zhou, Hongjie He, Jonathan Li
