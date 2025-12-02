@@ -169,36 +169,21 @@ author_profile: true
   line-height: 1.4;
 }
 
-.pub-stats-container {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
+.pub-paper-stats {
+  display: inline-flex;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
-.pub-stat-box {
+.pub-stat-item {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 2px 8px;
-  border-radius: 4px;
+  padding: 3px 10px;
+  border-radius: 12px;
   font-size: 12px;
-  font-weight: 500;
-}
-
-.pub-stat-citation {
-  background-color: #e8f4fd;
-  color: #1976d2;
-}
-
-.pub-stat-stars {
-  background-color: #fff8e1;
-  color: #f57c00;
-}
-
-.pub-stat-box svg {
-  width: 14px;
-  height: 14px;
+  background: var(--global-border-color);
+  color: var(--global-text-color);
 }
 
 .pub-paper-authors {
@@ -325,6 +310,7 @@ author_profile: true
   }
   .pub-paper-title-row {
     flex-direction: column;
+    gap: 6px;
   }
 }
 </style>
@@ -363,7 +349,7 @@ author_profile: true
   </div>
 
   <!-- Paper: ZoomSearch -->
-  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,vqa,multimodal,vlm,training-free,reasoning" data-arxiv="2511.20460" data-github="kiki-zyq/ZoomSearch">
+  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,vqa,multimodal,vlm,training-free,reasoning">
     <div class="pub-paper-image-container">
       <span class="pub-paper-badge pub-badge-arxiv">arXiv</span>
       <img class="pub-paper-image" src="/images/paper/zoomsearch.jpg" alt="ZoomSearch">
@@ -371,19 +357,13 @@ author_profile: true
     <div class="pub-paper-content">
       <div class="pub-paper-meta">Nov 2025 · arXiv Preprint</div>
       <div class="pub-paper-title-row">
-        <div class="pub-paper-title">
+        <span class="pub-paper-title">
           Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search
-        </div>
-        <div class="pub-stats-container">
-          <span class="pub-stat-box pub-stat-citation" data-citation-target="2511.20460" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            <span class="citation-count">0</span>
-          </span>
-          <span class="pub-stat-box pub-stat-stars" data-stars-target="kiki-zyq/ZoomSearch" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <span class="stars-count">0</span>
-          </span>
-        </div>
+        </span>
+        <span class="pub-paper-stats">
+          <span class="pub-stat-item">📖 0</span>
+          <span class="pub-stat-item">⭐ 10</span>
+        </span>
       </div>
       <div class="pub-paper-authors">
         <span class="highlight">Yunqi Zhou*</span>, Chengjie Jiang*, Chun Yuan, Jing Li†
@@ -403,7 +383,7 @@ author_profile: true
   </div>
 
   <!-- Paper: GRASP -->
-  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,multimodal,Reasoning Segmentation,RL" data-arxiv="2508.17102">
+  <div class="pub-paper-card" data-year="2025" data-topics="remote-sensing,multimodal,Reasoning Segmentation,RL">
     <div class="pub-paper-image-container">
       <span class="pub-paper-badge pub-badge-arxiv">arXiv</span>
       <img class="pub-paper-image" src="/images/paper/grasp.png" alt="GRASP">
@@ -411,15 +391,12 @@ author_profile: true
     <div class="pub-paper-content">
       <div class="pub-paper-meta">Aug 2025 · arXiv Preprint</div>
       <div class="pub-paper-title-row">
-        <div class="pub-paper-title">
+        <span class="pub-paper-title">
           GRASP: Geospatial pixel Reasoning viA Structured Policy learning
-        </div>
-        <div class="pub-stats-container">
-          <span class="pub-stat-box pub-stat-citation" data-citation-target="2508.17102" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            <span class="citation-count">0</span>
-          </span>
-        </div>
+        </span>
+        <span class="pub-paper-stats">
+          <span class="pub-stat-item">📖 1</span>
+        </span>
       </div>
       <div class="pub-paper-authors">
         Chengjie Jiang, <span class="highlight">Yunqi Zhou</span>, Jiafeng Yan, Jing Li†, Jiayang Li, Yue Zhou, Hongjie He, Jonathan Li
@@ -532,62 +509,16 @@ author_profile: true
     }
   }
 
-  // Fetch citation counts from Semantic Scholar
-  function fetchCitations() {
-    var citationBoxes = document.querySelectorAll('[data-citation-target]');
-    citationBoxes.forEach(function(box) {
-      var arxivId = box.getAttribute('data-citation-target');
-      fetch('https://api.semanticscholar.org/graph/v1/paper/arXiv:' + arxivId + '?fields=citationCount')
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          if (data && typeof data.citationCount === 'number') {
-            box.querySelector('.citation-count').textContent = data.citationCount;
-            box.style.display = 'inline-flex';
-          }
-        })
-        .catch(function(err) {
-          console.log('Citation fetch error for ' + arxivId + ':', err);
-        });
-    });
-  }
-
-  // Fetch GitHub stars
-  function fetchGitHubStars() {
-    var starsBoxes = document.querySelectorAll('[data-stars-target]');
-    starsBoxes.forEach(function(box) {
-      var repo = box.getAttribute('data-stars-target');
-      fetch('https://api.github.com/repos/' + repo)
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          if (data && typeof data.stargazers_count === 'number') {
-            box.querySelector('.stars-count').textContent = data.stargazers_count;
-            box.style.display = 'inline-flex';
-          }
-        })
-        .catch(function(err) {
-          console.log('GitHub fetch error for ' + repo + ':', err);
-        });
-    });
-  }
-
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       bindYearBtns();
       bindTopicBtns();
       bindTagBtns();
-      fetchCitations();
-      fetchGitHubStars();
     });
   } else {
     bindYearBtns();
     bindTopicBtns();
     bindTagBtns();
-    fetchCitations();
-    fetchGitHubStars();
   }
 })();
 </script>
