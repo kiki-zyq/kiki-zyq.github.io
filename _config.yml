@@ -23,7 +23,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : ".images/kiki.jpg"
+  avatar           : "kiki.jpg"
   name             : "Yunqi Zhou"
   pronouns         : # example: "she/her"  
   bio              : "Undergraduate student, Data Science and Big Data Technology"
