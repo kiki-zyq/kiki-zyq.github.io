@@ -200,10 +200,7 @@ I am also currently working on the development of **CUFE's Industrial and Region
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2511.20460" class="btn btn-arxiv">arXiv</a>
-      <a href="https://github.com/kiki-zyq/ZoomSearch" class="btn btn-github">
-        GitHub
-        <img src="https://img.shields.io/github/stars/kiki-zyq/ZoomSearch?style=social" alt="GitHub Stars" style="vertical-align: middle; margin-left: 4px;">
-      </a>
+      <a href="https://github.com/kiki-zyq/ZoomSearch" class="btn btn-github">GitHub</a>
       <a href="https://kiki-zyq.github.io/Zoom-Search/" class="btn btn-project">Project</a>
     </div>
   </div>
