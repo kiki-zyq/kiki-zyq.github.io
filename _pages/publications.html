@@ -512,12 +512,14 @@ author_profile: true
   fetch("https://api.github.com/repos/kiki-zyq/ZoomSearch")
     .then(r => r.json())
     .then(data => {
-      const el = document.querySelector(".pub-stat-item");
-      if (el) {
-        el.textContent = `⭐ Stars: ${data.stargazers_count}`;
-      }
+      document.querySelectorAll(".pub-stat-item").forEach(el => {
+        if (el.textContent.includes("Stars")) {
+          el.textContent = `⭐ Stars: ${data.stargazers_count}`;
+        }
+      });
     })
     .catch(err => console.error("Failed to load GitHub stars:", err));
 </script>
+
 
 {% endraw %}
