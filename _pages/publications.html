@@ -352,7 +352,7 @@ author_profile: true
         <span class="pub-paper-title">Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search</span>
         <span class="pub-paper-stats">
           <span class="pub-stat-item">📖Citations: 0</span>
-          <span class="pub-stat-item">⭐Stars: 12</span>
+          <span class="pub-stat-item">⭐Stars: --</span>
         </span>
       </div>
       <div class="pub-paper-authors">
@@ -508,4 +508,16 @@ author_profile: true
   }
 })();
 </script>
+<script>
+  fetch("https://api.github.com/repos/kiki-zyq/ZoomSearch")
+    .then(r => r.json())
+    .then(data => {
+      const el = document.querySelector(".pub-stat-item");
+      if (el) {
+        el.textContent = `⭐ Stars: ${data.stargazers_count}`;
+      }
+    })
+    .catch(err => console.error("Failed to load GitHub stars:", err));
+</script>
+
 {% endraw %}
