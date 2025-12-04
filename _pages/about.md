@@ -237,6 +237,12 @@ Feel free to reach out anytime! 💌
 **Github:**
 - https://github.com/kiki-zyq
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p>
+  <i class="fa fa-eye"></i> Page Views: <span id="busuanzi_value_site_pv"></span> | 
+  Visitors: <span id="busuanzi_value_site_uv"></span>
+</p>
+
 
 <!-- 
 ==============================================
