@@ -351,8 +351,8 @@ author_profile: true
       <div class="pub-paper-title-row">
         <span class="pub-paper-title">Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search</span>
         <span class="pub-paper-stats">
-          <span class="pub-stat-item">📖Citations: 0</span>
-          <span class="pub-stat-item">⭐Stars: --</span>
+          <span class="pub-stat-item" data-arxiv="2511.20460">📖Citations: --</span>
+          <span class="pub-stat-item" data-repo="kiki-zyq/ZoomSearch">⭐Stars: --</span>
         </span>
       </div>
       <div class="pub-paper-authors">
@@ -381,7 +381,7 @@ author_profile: true
       <div class="pub-paper-title-row">
         <span class="pub-paper-title">GRASP: Geospatial pixel Reasoning viA Structured Policy learning</span>
         <span class="pub-paper-stats">
-          <span class="pub-stat-item">📖Citations: 1</span>
+           <span class="pub-stat-item" data-arxiv="2508.17102">📖Citations: --</span>
         </span>
       </div>
       <div class="pub-paper-authors">
@@ -509,16 +509,25 @@ author_profile: true
 })();
 </script>
 <script>
-  fetch("https://api.github.com/repos/kiki-zyq/ZoomSearch")
+
+document.querySelectorAll(".pub-stat-item[data-repo]").forEach(el => {
+  fetch(`https://api.github.com/repos/${el.dataset.repo}`)
     .then(r => r.json())
     .then(data => {
-      document.querySelectorAll(".pub-stat-item").forEach(el => {
-        if (el.textContent.includes("Stars")) {
-          el.textContent = `⭐ Stars: ${data.stargazers_count}`;
-        }
-      });
+      el.textContent = `⭐ Stars: ${data.stargazers_count}`;
     })
     .catch(err => console.error("Failed to load GitHub stars:", err));
+});
+
+
+document.querySelectorAll(".pub-stat-item[data-arxiv]").forEach(el => {
+  fetch(`https://api.semanticscholar.org/graph/v1/paper/arXiv:${el.dataset.arxiv}?fields=citationCount`)
+    .then(r => r.json())
+    .then(data => {
+      el.textContent = `📖 Citations: ${data.citationCount ?? 0}`;
+    })
+    .catch(err => console.error("Failed to load citations:", err));
+});
 </script>
 
 
