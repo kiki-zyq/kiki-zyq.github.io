@@ -511,12 +511,15 @@ author_profile: true
 <script>
 
 document.querySelectorAll(".pub-stat-item[data-repo]").forEach(el => {
-  fetch(`https://api.github.com/repos/${el.dataset.repo}`)
+  const repo = el.dataset.repo;
+  fetch(`https://img.shields.io/github/stars/${repo}.json`)
     .then(r => r.json())
     .then(data => {
-      el.textContent = `⭐ Stars: ${data.stargazers_count}`;
+      el.textContent = `⭐ Stars: ${data.value}`;
     })
-    .catch(err => console.error("Failed to load GitHub stars:", err));
+    .catch(() => {
+      el.textContent = `⭐ Stars: N/A`;
+    });
 });
 
 
