@@ -17,8 +17,9 @@ I am also currently working on the development of **CUFE's Industrial and Region
 ## 🚀 Recent Works
 
 <style>
-h2, h3 {
-  border-bottom: none;
+.page__content h2,
+.page__content h3 {
+  border-bottom: none !important;
 }
 .paper-card {
   display: flex;
