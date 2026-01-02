@@ -19,10 +19,12 @@ I am also currently working on the development of **CUFE's Industrial and Region
 <style>
 .paper-card {
   display: flex;
-  margin-bottom: 30px;
+  align-items: center;
+  margin-bottom: 25px;
   padding: 20px;
   border-radius: 10px;
-  background: #f9f9f9;
+  background: var(--global-bg-color, #f9f9f9);
+  border: 1px solid var(--global-border-color, #eee);
   transition: box-shadow 0.3s ease;
 }
 
@@ -32,21 +34,22 @@ I am also currently working on the development of **CUFE's Industrial and Region
 
 .paper-image-container {
   position: relative;
-  flex: 0 0 280px;
-  width: 280px;
-  height: 180px;
+  flex: 0 0 260px;
+  width: 260px;
+  height: 160px;
   margin-right: 25px;
   border-radius: 8px;
   overflow: hidden;
+  background: var(--global-border-color, #eee);
 }
 
 .paper-badge {
   position: absolute;
   top: 10px;
   left: 10px;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   color: white;
   z-index: 2;
@@ -54,14 +57,6 @@ I am also currently working on the development of **CUFE's Industrial and Region
 
 .badge-arxiv {
   background: linear-gradient(135deg, #b31b1b, #8b0000);
-}
-
-.badge-cvpr {
-  background: linear-gradient(135deg, #0066cc, #004999);
-}
-
-.badge-underreview {
-  background: linear-gradient(135deg, #ff9800, #e65100);
 }
 
 .paper-image {
@@ -82,106 +77,93 @@ I am also currently working on the development of **CUFE's Industrial and Region
   justify-content: center;
 }
 
-.paper-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 12px;
-  line-height: 1.4;
+.paper-meta {
+  font-size: 12px;
+  color: var(--global-text-color-light, #888);
+  margin-bottom: 8px;
 }
 
-.paper-authors {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 18px;
+.paper-title {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--global-text-color, #333);
+  margin-bottom: 10px;
   line-height: 1.6;
 }
 
+.paper-authors {
+  font-size: 13px;
+  color: var(--global-text-color-light, #666);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
 .paper-authors .highlight {
-  color: #EBCF53;
+  color: var(--global-link-color, #EBCF53);
   font-weight: bold;
-}
-
-.paper-authors a {
-  color: #EBCF53;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.paper-authors a:hover {
-  text-decoration: underline;
 }
 
 .paper-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
-/* ========== 按钮基础样式（覆盖模板默认样式） ========== */
 .paper-card .paper-links a.btn {
   display: inline-block !important;
-  padding: 8px 16px !important;
-  min-width: 100px !important;
+  padding: 6px 14px !important;
+  min-width: 80px !important;
   text-align: center !important;
-  border-radius: 6px !important;
-  font-size: 13px !important;
+  border-radius: 5px !important;
+  font-size: 12px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
   box-sizing: border-box !important;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
 }
 
-/* ========== arXiv 按钮 ========== */
 .paper-card .paper-links a.btn.btn-arxiv {
   background-color: #b31b1b !important;
-  border: 2px solid #b31b1b !important;
+  border-color: #b31b1b !important;
   color: #ffffff !important;
 }
-
 .paper-card .paper-links a.btn.btn-arxiv:hover {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #b31b1b !important;
-  border: 2px solid #b31b1b !important;
 }
 
-/* ========== GitHub 按钮 ========== */
 .paper-card .paper-links a.btn.btn-github {
   background-color: #24292e !important;
-  border: 2px solid #24292e !important;
+  border-color: #24292e !important;
   color: #ffffff !important;
 }
-
 .paper-card .paper-links a.btn.btn-github:hover {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #24292e !important;
-  border: 2px solid #24292e !important;
 }
 
-/* ========== Project 按钮 ========== */
 .paper-card .paper-links a.btn.btn-project {
-  background-color: #EBCF53 !important;
-  border: 2px solid #EBCF53 !important;
-  color: #000000 !important;
-}
-
-.paper-card .paper-links a.btn.btn-project:hover {
-  background-color: #ffffff !important;
-  color: #d4b84a !important;
-  border: 2px solid #EBCF53 !important;
-}
-
-/* ========== PDF 按钮 ========== */
-.paper-card .paper-links a.btn.btn-pdf {
-  background-color: #e74c3c !important;
-  border: 2px solid #e74c3c !important;
+  background-color: var(--global-link-color, #EBCF53) !important;
+  border-color: var(--global-link-color, #EBCF53) !important;
   color: #ffffff !important;
 }
+.paper-card .paper-links a.btn.btn-project:hover {
+  background-color: transparent !important;
+  color: var(--global-link-color, #EBCF53) !important;
+}
 
-.paper-card .paper-links a.btn.btn-pdf:hover {
-  background-color: #ffffff !important;
-  color: #e74c3c !important;
-  border: 2px solid #e74c3c !important;
+@media (max-width: 768px) {
+  .paper-card {
+    flex-direction: column;
+  }
+  .paper-image-container {
+    width: 100%;
+    flex: none;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 </style>
 
@@ -192,6 +174,7 @@ I am also currently working on the development of **CUFE's Industrial and Region
     <img class="paper-image" src="./images/paper/zoomsearch.jpg" alt="ZoomSearch">
   </div>
   <div class="paper-content">
+    <div class="paper-meta">Nov 2025 · arXiv Preprint</div>
     <div class="paper-title">
       Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search
     </div>
@@ -213,6 +196,7 @@ I am also currently working on the development of **CUFE's Industrial and Region
     <img class="paper-image" src="./images/paper/grasp.png" alt="GRASP">
   </div>
   <div class="paper-content">
+    <div class="paper-meta">Aug 2025 · arXiv Preprint</div>
     <div class="paper-title">
       GRASP: Geospatial pixel Reasoning viA Structured Policy learning
     </div>
