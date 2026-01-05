@@ -222,11 +222,11 @@ Feel free to reach out anytime! 💌
 - 13880155015@163.com  
 - 1823273293@qq.com
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <p>
   <i class="fa fa-eye"></i> Page Views: <span id="busuanzi_value_site_pv"></span> | 
   Visitors: <span id="busuanzi_value_site_uv"></span>
-</p>
+</p> -->
 
 
 <!-- 
