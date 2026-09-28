@@ -1,0 +1,300 @@
+.page__content h2,
+.page__content h3 {
+  border-bottom: none !important;
+}
+
+.publication-filter-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 10px;
+}
+
+.publication-filter-group { margin-bottom: 15px; }
+.publication-filter-group:last-child { margin-bottom: 0; }
+
+.publication-filter-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--global-text-color);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.publication-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.publication-filter-button {
+  padding: 6px 14px;
+  border: 2px solid var(--global-border-color);
+  border-radius: 20px;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.publication-filter-button:hover {
+  border-color: var(--global-link-color);
+  color: var(--global-link-color);
+}
+
+.publication-filter-button.active {
+  border-color: var(--global-link-color) !important;
+  background: var(--global-link-color) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.publication-author-notes {
+  margin: -10px 0 20px;
+  color: var(--global-text-color);
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+}
+
+.publication-note-divider {
+  margin: 0 10px;
+  color: var(--global-border-color);
+}
+
+.publication-year-divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0 20px;
+}
+
+.publication-year-divider .year-text {
+  padding-right: 20px;
+  color: var(--global-text-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.publication-year-divider .year-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--global-link-color), transparent);
+}
+
+.publication-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid var(--global-border-color, #eee);
+  border-radius: 10px;
+  background: var(--global-bg-color, #f9f9f9);
+  transition: box-shadow 0.3s ease;
+}
+
+.publication-card:hover { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); }
+.publication-card.publication-hidden { display: none !important; }
+
+.publication-image-container {
+  position: relative;
+  flex: 0 0 260px;
+  width: 260px;
+  height: 160px;
+  margin-right: 25px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--global-border-color, #eee);
+}
+
+.publication-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.publication-badge--arxiv { background: linear-gradient(135deg, #b31b1b, #8b0000); }
+.publication-badge--cvpr { background: linear-gradient(135deg, #0066cc, #004999); }
+.publication-badge--iccv { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
+.publication-badge--eccv { background: linear-gradient(135deg, #00695c, #004d40); }
+.publication-badge--neurips { background: linear-gradient(135deg, #5c6bc0, #3949ab); }
+.publication-badge--icml { background: linear-gradient(135deg, #ef6c00, #e65100); }
+.publication-badge--aaai { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.publication-badge--under-review { background: linear-gradient(135deg, #ff9800, #e65100); }
+
+.publication-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.publication-image-container:hover .publication-image { transform: scale(1.08); }
+
+.publication-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.publication-meta {
+  margin-bottom: 8px;
+  color: var(--global-text-color-light, #888);
+  font-size: 12px;
+}
+
+.publication-title-row {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.publication-title {
+  color: var(--global-text-color, #333);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.publication-stats {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.publication-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: var(--global-border-color);
+  color: var(--global-text-color);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.publication-authors {
+  margin-bottom: 12px;
+  color: var(--global-text-color-light, #666);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.publication-authors .highlight {
+  color: var(--global-link-color, #ebcf53);
+  font-weight: bold;
+}
+
+.publication-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.publication-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--global-border-color);
+  color: var(--global-text-color);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.publication-tag:hover {
+  background: var(--global-link-color);
+  color: #fff;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.publication-button {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 80px;
+  padding: 6px 14px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.publication-button--arxiv,
+.publication-button--pdf {
+  border-color: #b31b1b;
+  background-color: #b31b1b;
+  color: #fff !important;
+}
+
+.publication-button--arxiv:hover,
+.publication-button--pdf:hover {
+  background-color: transparent !important;
+  color: #b31b1b !important;
+}
+
+.publication-button--github {
+  border-color: #24292e;
+  background-color: #24292e;
+  color: #fff !important;
+}
+
+.publication-button--github:hover {
+  background-color: transparent !important;
+  color: #24292e !important;
+}
+
+.publication-button--project {
+  border-color: var(--global-link-color, #ebcf53);
+  background-color: var(--global-link-color, #ebcf53);
+  color: #fff !important;
+}
+
+.publication-button--project:hover {
+  background-color: transparent !important;
+  color: var(--global-link-color, #ebcf53) !important;
+}
+
+.publication-no-results {
+  padding: 40px;
+  color: var(--global-text-color-light);
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .publication-card { flex-direction: column; }
+
+  .publication-image-container {
+    flex: none;
+    width: 100%;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .publication-filter-buttons { gap: 6px; }
+
+  .publication-filter-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

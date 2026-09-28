@@ -1,0 +1,51 @@
+{% assign paper = include.paper %}
+{% assign topic_csv = paper.topics | join: ',' %}
+<article class="publication-card{% if include.compact %} publication-card--compact{% endif %}"
+         data-year="{{ paper.year }}"
+         data-topics="{{ topic_csv }}">
+  <div class="publication-image-container">
+    {% if paper.badge %}
+      <span class="publication-badge publication-badge--{{ paper.badge_style | default: 'arxiv' }}">{{ paper.badge }}</span>
+    {% endif %}
+    <img class="publication-image" src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt | default: paper.title }}">
+  </div>
+
+  <div class="publication-content">
+    <div class="publication-meta">{{ paper.date_label }} · {{ paper.venue }}</div>
+
+    <div class="publication-title-row">
+      <span class="publication-title">{{ paper.title }}</span>
+      {% unless include.compact %}
+        {% if paper.stats %}
+          <span class="publication-stats">
+            {% if paper.stats.arxiv_id %}
+              <span class="publication-stat" data-arxiv="{{ paper.stats.arxiv_id }}">📖 Citations: --</span>
+            {% endif %}
+            {% if paper.stats.github_repo %}
+              <span class="publication-stat" data-repo="{{ paper.stats.github_repo }}">⭐ Stars: --</span>
+            {% endif %}
+          </span>
+        {% endif %}
+      {% endunless %}
+    </div>
+
+    <div class="publication-authors">
+      {% for author in paper.authors %}{% if author.highlight %}<span class="highlight">{% endif %}{{ author.name }}{{ author.suffix }}{% if author.highlight %}</span>{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+    </div>
+
+    {% unless include.compact %}
+      <div class="publication-tags">
+        {% for topic_id in paper.topics %}
+          {% assign topic = site.data.publications.topics | where: "id", topic_id | first %}
+          <button class="publication-tag" type="button" data-topic="{{ topic_id }}">{{ topic.label | default: topic_id }}</button>
+        {% endfor %}
+      </div>
+    {% endunless %}
+
+    <div class="publication-links">
+      {% for link in paper.links %}
+        <a href="{{ link.url }}" class="publication-button publication-button--{{ link.style }}">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</article>
