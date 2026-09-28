@@ -1,0 +1,78 @@
+topics:
+  - id: remote-sensing
+    label: "Remote Sensing"
+  - id: vlm
+    label: "VLM"
+  - id: reasoning-segmentation
+    label: "Reasoning Segmentation"
+  - id: rl
+    label: "RL"
+
+papers:
+  - id: zoomsearch
+    title: "Look Where It Matters: Training-Free Ultra-HR Remote Sensing VQA via Adaptive Zoom Search"
+    year: 2025
+    date_label: "Nov 2025"
+    venue: "arXiv Preprint"
+    badge: "arXiv"
+    badge_style: arxiv
+    image: "/images/paper/zoomsearch.jpg"
+    image_alt: "ZoomSearch"
+    selected: true
+    authors:
+      - name: "Yunqi Zhou"
+        suffix: "*"
+        highlight: true
+      - name: "Chengjie Jiang"
+        suffix: "*"
+      - name: "Chun Yuan"
+      - name: "Jing Li"
+        suffix: "†"
+    topics:
+      - remote-sensing
+      - vlm
+    links:
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/2511.20460"
+        style: arxiv
+      - label: "GitHub"
+        url: "https://github.com/kiki-zyq/ZoomSearch"
+        style: github
+      - label: "Project"
+        url: "https://kiki-zyq.github.io/Zoom-Search/"
+        style: project
+    stats:
+      arxiv_id: "2511.20460"
+      github_repo: "kiki-zyq/ZoomSearch"
+
+  - id: grasp
+    title: "GRASP: Geospatial pixel Reasoning viA Structured Policy learning"
+    year: 2025
+    date_label: "Aug 2025"
+    venue: "arXiv Preprint"
+    badge: "arXiv"
+    badge_style: arxiv
+    image: "/images/paper/grasp.png"
+    image_alt: "GRASP"
+    selected: true
+    authors:
+      - name: "Chengjie Jiang"
+      - name: "Yunqi Zhou"
+        highlight: true
+      - name: "Jiafeng Yan"
+      - name: "Jing Li"
+        suffix: "†"
+      - name: "Jiayang Li"
+      - name: "Yue Zhou"
+      - name: "Hongjie He"
+      - name: "Jonathan Li"
+    topics:
+      - remote-sensing
+      - reasoning-segmentation
+      - rl
+    links:
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/2508.17102"
+        style: arxiv
+    stats:
+      arxiv_id: "2508.17102"
