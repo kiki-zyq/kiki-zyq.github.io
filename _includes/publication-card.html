@@ -51,6 +51,11 @@
                IF: {{ paper.impact_factor }}
              </span>
            {% endif %}
+           {% if paper.ccf_rank %}
+             <span class="publication-tag publication-ccf-rank publication-ccf-rank--{{ paper.ccf_rank | downcase }}">
+               CCF-{{ paper.ccf_rank }}
+             </span>
+           {% endif %}
      </div>
     {% endunless %}
 
