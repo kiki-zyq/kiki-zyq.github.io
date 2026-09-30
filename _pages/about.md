@@ -8,6 +8,8 @@ redirect_from:
   - /about.html
 ---
 
+<div class="about-page" markdown="1">
+
 <h2 class="section-heading">About Me</h2>
 
 I am a fourth-year undergraduate student at the **Central University of Finance and Economics**, majoring in **Data Science and Big Data Technology**, under the supervision of Associate Professor **[Jing Li](https://scholar.google.com/citations?hl=zh-CN&user=YAG9tSMAAAAJ)**.<br>
@@ -69,3 +71,5 @@ Feel free to reach out anytime! 💌
 **Email:**
 - 2023312247@email.cufe.edu.cn
 - 13880155015@163.com
+
+</div>
