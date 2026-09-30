@@ -11,6 +11,8 @@ topics:
     label: "Journal"
   - id: conference
     label: "Conference"
+  - id: agents
+    label: "Agents"
 
 papers:
   - id: zoomsearch
