@@ -37,11 +37,21 @@
 
     {% unless include.compact %}
       <div class="publication-tags">
-        {% for topic_id in paper.topics %}
-          {% assign topic = site.data.publications.topics | where: "id", topic_id | first %}
-          <button class="publication-tag" type="button" data-topic="{{ topic_id }}">{{ topic.label | default: topic_id }}</button>
-        {% endfor %}
-      </div>
+           {% for topic_id in paper.topics %}
+             {% unless topic_id == "journal" or topic_id == "conference" %}
+               {% assign topic = site.data.publications.topics | where: "id", topic_id | first %}
+               <button class="publication-tag" type="button" data-topic="{{ topic_id }}">
+                 {{ topic.label | default: topic_id }}
+               </button>
+             {% endunless %}
+           {% endfor %}
+         
+           {% if paper.impact_factor %}
+             <span class="publication-tag publication-impact-factor">
+               IF: {{ paper.impact_factor }}
+             </span>
+           {% endif %}
+     </div>
     {% endunless %}
 
     <div class="publication-links">
