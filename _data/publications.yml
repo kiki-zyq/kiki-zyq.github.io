@@ -7,6 +7,10 @@ topics:
     label: "Reasoning Segmentation"
   - id: rl
     label: "RL"
+  - id: journal
+    label: "Journal"
+  - id: conference
+    label: "Conference"
 
 papers:
   - id: zoomsearch
@@ -70,9 +74,11 @@ papers:
       - remote-sensing
       - reasoning-segmentation
       - rl
+      - journal
+    impact_factor: "12.9"
     links:
       - label: "arXiv"
         url: "https://arxiv.org/abs/2508.17102"
         style: arxiv
     stats:
-      arxiv_id: "2508.17102"
+      citations: 5
