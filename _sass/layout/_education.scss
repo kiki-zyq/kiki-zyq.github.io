@@ -1,3 +1,30 @@
+.about-page {
+  --about-display-font: Charter, "Bitstream Charter", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --about-body-font: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  font-family: var(--about-body-font);
+  font-size: 15px;
+  font-kerning: normal;
+  line-height: 1.72;
+  text-rendering: optimizeLegibility;
+}
+
+.about-page > p {
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.002em;
+}
+
+.about-page strong {
+  font-weight: 650;
+  letter-spacing: -0.008em;
+}
+
+.about-page > ul {
+  font-family: var(--about-body-font);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .section-heading {
   display: flex;
   align-items: center;
@@ -6,11 +33,11 @@
   padding: 0 !important;
   border: 0 !important;
   color: var(--global-text-color);
-  font-family: $header-font-family;
-  font-size: 24px;
+  font-family: var(--about-display-font);
+  font-size: 25px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
 }
 
 .section-heading::before {
@@ -56,8 +83,10 @@
     linear-gradient(145deg, var(--education-tint), transparent 52%),
     var(--global-bg-color);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.055);
-  font-family: $global-font-family;
+  font-family: var(--about-body-font);
+  font-kerning: normal;
   isolation: isolate;
+  text-rendering: optimizeLegibility;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -121,9 +150,10 @@
 
 .education-stage {
   color: var(--education-accent);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.085em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -133,8 +163,10 @@
   border-radius: 999px;
   background: var(--education-chip-bg);
   color: var(--education-accent);
-  font-size: 10.5px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -144,11 +176,11 @@
   padding: 0;
   border: 0 !important;
   color: var(--global-text-color);
-  font-family: $header-font-family;
-  font-size: 17px;
+  font-family: var(--about-display-font);
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
 }
 
 .education-card .education-degree,
@@ -159,15 +191,45 @@
 
 .education-card .education-degree {
   color: var(--global-text-color);
+  font-family: var(--about-body-font);
   font-size: 12.5px;
   font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
 .education-card .education-location {
   max-width: 100%;
   margin-top: 4px !important;
   color: var(--global-text-color-light);
+  font-size: 11.25px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+.about-page .publication-title {
+  font-family: var(--about-display-font);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.016em;
+  line-height: 1.3;
+}
+
+.about-page .publication-meta,
+.about-page .publication-authors,
+.about-page .publication-stat,
+.about-page .publication-tag,
+.about-page .publication-button {
+  font-family: var(--about-body-font);
+}
+
+.about-page .publication-meta {
   font-size: 11.5px;
+  letter-spacing: 0.015em;
+}
+
+.about-page .publication-authors {
+  font-size: 12.5px;
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
