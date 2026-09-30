@@ -56,7 +56,7 @@ papers:
     title: "GRASP: Geospatial pixel Reasoning viA Structured Policy learning"
     year: 2025
     date_label: "Aug 2025"
-    venue: "arXiv Preprint"
+    venue: "ISPRS Journal of Photogrammetry and Remote Sensing"
     badge: "ISPRS'26"
     badge_style: journal
     image: "/images/paper/grasp.png"
