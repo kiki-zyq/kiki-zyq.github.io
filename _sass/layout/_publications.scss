@@ -135,16 +135,15 @@
   background: linear-gradient(135deg, #1565c0, #0d47a1);
 }
 
-.publication-impact-factor,
-.publication-impact-factor:hover,
-.publication-ccf-rank,
-.publication-ccf-rank:hover {
-  border: 1px solid rgba(154, 103, 0, 0.35);
+.publication-tags .publication-impact-factor,
+.publication-tags .publication-ccf-rank {
+  border: 1px solid rgba(154, 103, 0, 0.35) !important;
   background: var(--global-border-color) !important;
   color: #8b0000 !important;
-  font-weight: 700;
+  font-weight: 700 !important;
   cursor: default;
-  transition: none;
+  pointer-events: none;
+  transition: none !important;
 }
 
 .publication-image {
