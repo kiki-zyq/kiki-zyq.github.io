@@ -18,11 +18,13 @@
       {% unless include.compact %}
         {% if paper.stats %}
           <span class="publication-stats">
-            {% if paper.stats.arxiv_id %}
-              <span class="publication-stat" data-arxiv="{{ paper.stats.arxiv_id }}">📖 Citations: --</span>
-            {% endif %}
-            {% if paper.stats.github_repo %}
-              <span class="publication-stat" data-repo="{{ paper.stats.github_repo }}">⭐ Stars: --</span>
+             {% if paper.stats.citations %}
+               <span class="publication-stat">📖 Citations: {{ paper.stats.citations }}</span>
+             {% elsif paper.stats.arxiv_id %}
+               <span class="publication-stat" data-arxiv="{{ paper.stats.arxiv_id }}">📖 Citations: --</span>
+             {% endif %}
+             {% if paper.stats.github_repo %}
+               <span class="publication-stat" data-repo="{{ paper.stats.github_repo }}">⭐ Stars: --</span>
             {% endif %}
           </span>
         {% endif %}
