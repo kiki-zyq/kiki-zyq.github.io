@@ -7,12 +7,13 @@ topics:
     label: "Reasoning Segmentation"
   - id: rl
     label: "RL"
+  - id: agents
+    label: "Agents"
   - id: journal
     label: "Journal"
   - id: conference
     label: "Conference"
-  - id: agents
-    label: "Agents"
+
 
 papers:
   - id: zoomsearch
