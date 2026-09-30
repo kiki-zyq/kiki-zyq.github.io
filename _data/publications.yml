@@ -46,7 +46,7 @@ papers:
         url: "https://kiki-zyq.github.io/Zoom-Search/"
         style: project
     stats:
-      arxiv_id: "2511.20460"
+      citations: 9
       github_repo: "kiki-zyq/ZoomSearch"
 
   - id: grasp
@@ -82,3 +82,35 @@ papers:
         style: arxiv
     stats:
       citations: 5
+
+  - id: routing-by-contract
+    title: "Routing by Contract: Evidence-Gated Skill Selection for Language Agents"
+    year: 2026
+    date_label: "2026"
+    venue: "ACM CIKM 2026"
+    badge: "CIKM'26"
+    badge_style: conference
+    image: "/images/paper/routing-by-contract.png"
+    image_alt: "Routing by Contract"
+    selected: true
+
+    authors:
+      - name: "Shouzheng Xu"
+        suffix: "*†"
+      - name: "Zonglin Feng"
+        suffix: "*"
+      - name: "Yunqi Zhou"
+        highlight: true
+      - name: "Yaqing Li"
+      - name: "Jingyi Wu"
+
+    topics:
+      - agents
+      - conference
+      
+    ccf_rank: "B"
+    
+    links: []
+
+    stats:
+      citations: 0
