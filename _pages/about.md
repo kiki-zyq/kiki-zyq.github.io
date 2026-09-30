@@ -10,8 +10,9 @@ redirect_from:
 
 ## 💫 About Me
 
-I am a third-year undergraduate student at the **Central University of Finance and Economics**, majoring in **Data Science and Big Data Technology**, under the supervision of Associate Professor **[Jing Li](https://scholar.google.com/citations?hl=zh-CN&user=YAG9tSMAAAAJ)**.<br>
-My research interests focus on: **Multimodal Large Language Models** and **Image Reasoning Segmentation**.<br>
+I am a fourth-year undergraduate student at the **Central University of Finance and Economics**, majoring in **Data Science and Big Data Technology**, under the supervision of Associate Professor **[Jing Li](https://scholar.google.com/citations?hl=zh-CN&user=YAG9tSMAAAAJ)**.<br>
+I will be joining the **College of Computer Science and Technology at Zhejiang University** as a Ph.D. student.<br>
+My research interests focus on: **Multimodal Large Language Models**, **Image Reasoning Segmentation**, and **Time Series Foundation Models**.<br>
 I am also currently working on the development of **CUFE's Industrial and Regional Development Large Model**, supervised by **[Xu Yang](https://github.com/peteryang1)**, Researcher at Microsoft Research Asia.
 
 ## 🚀 Recent Works
@@ -30,4 +31,3 @@ Feel free to reach out anytime! 💌
 **Email:**
 - 2023312247@email.cufe.edu.cn
 - 13880155015@163.com
-- 1823273293@qq.com
