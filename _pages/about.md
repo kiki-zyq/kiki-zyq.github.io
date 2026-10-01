@@ -72,8 +72,6 @@ Feel free to reach out anytime! 💌
 - 2023312247@email.cufe.edu.cn
 - 13880155015@163.com
 
-</div>
-
 <section class="visitor-map-section" aria-labelledby="visitor-map-heading">
   <h2 class="section-heading" id="visitor-map-heading">Visitors</h2>
   <div class="visitor-map-card">
@@ -85,8 +83,8 @@ Feel free to reach out anytime! 💌
         </a>
       </noscript>
     </div>
-    <p class="visitor-map-note">Visitor locations are approximate and derived from IP-based geolocation.</p>
   </div>
 </section>
 
 </div>
+
