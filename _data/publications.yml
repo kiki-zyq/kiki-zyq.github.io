@@ -47,7 +47,7 @@ papers:
       - label: "GitHub"
         url: "https://github.com/Ronniejiang/RS-OPSD"
         style: github
-      - label: "🤗 Model"
+      - label: "Model"
         url: "https://huggingface.co/ronniejiangC/RS-OPSD"
         style: huggingface
     stats:
