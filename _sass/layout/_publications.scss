@@ -281,14 +281,14 @@
 
 .publication-button--huggingface {
   border-color: #f0b90b;
-  background-color: #ffd21e;
+  background-color: #f0b90b;
   color: #111 !important;
 }
 
 .publication-button--huggingface:hover {
-  border-color: #ffd21e;
-  background-color: #ffe56b !important;
-  color: #111 !important;
+  border-color: #f0b90b;
+  background-color: transparent !important;
+  color: #f0b90b !important;
 }
 
 .publication-button--project {
