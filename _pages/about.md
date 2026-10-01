@@ -73,3 +73,20 @@ Feel free to reach out anytime! 💌
 - 13880155015@163.com
 
 </div>
+
+<section class="visitor-map-section" aria-labelledby="visitor-map-heading">
+  <h2 class="section-heading" id="visitor-map-heading">Visitors</h2>
+  <div class="visitor-map-card">
+    <div class="visitor-map-widget">
+      <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=dlTwSAggzXVvNCoGJTECTelASXony7uJUdtxe5GCQJE&amp;cl=ffffff&amp;w=a"></script>
+      <noscript>
+        <a href="https://mapmyvisitors.com/web/1c8l0" title="View visitor statistics">
+          <img src="https://mapmyvisitors.com/map.png?d=dlTwSAggzXVvNCoGJTECTelASXony7uJUdtxe5GCQJE&amp;cl=ffffff" alt="Map of approximate visitor locations">
+        </a>
+      </noscript>
+    </div>
+    <p class="visitor-map-note">Visitor locations are approximate and derived from IP-based geolocation.</p>
+  </div>
+</section>
+
+</div>
