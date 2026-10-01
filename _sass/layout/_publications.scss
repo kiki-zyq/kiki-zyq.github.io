@@ -279,6 +279,18 @@
   color: #24292e !important;
 }
 
+.publication-button--huggingface {
+  border-color: #f0b90b;
+  background-color: #ffd21e;
+  color: #111 !important;
+}
+
+.publication-button--huggingface:hover {
+  border-color: #ffd21e;
+  background-color: #ffe56b !important;
+  color: #111 !important;
+}
+
 .publication-button--project {
   border-color: var(--global-link-color, #ebcf53);
   background-color: var(--global-link-color, #ebcf53);
