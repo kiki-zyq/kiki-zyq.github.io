@@ -234,6 +234,46 @@
   line-height: 1.5;
 }
 
+.visitor-map-card {
+  margin: 0.8rem 0 1.25rem;
+  padding: 20px 20px 14px;
+  overflow: hidden;
+  border: 1px solid rgba(79, 159, 154, 0.3);
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(79, 159, 154, 0.1), transparent 52%),
+    var(--global-bg-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.055);
+}
+
+.visitor-map-widget {
+  display: flex;
+  min-height: 220px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.visitor-map-widget img,
+.visitor-map-widget iframe,
+.visitor-map-widget canvas,
+.visitor-map-widget svg {
+  display: block;
+  max-width: 100% !important;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+}
+
+.visitor-map-note {
+  margin: 10px 0 0 !important;
+  color: var(--global-text-color-light);
+  font-size: 10.5px;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .education-grid {
     grid-template-columns: 1fr;
@@ -278,5 +318,13 @@
     flex-basis: 54px;
     width: 54px;
     height: 54px;
+  }
+
+  .visitor-map-card {
+    padding: 14px 12px 11px;
+  }
+
+  .visitor-map-widget {
+    min-height: 160px;
   }
 }
