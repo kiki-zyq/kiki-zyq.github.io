@@ -28,12 +28,15 @@ papers:
     selected: true
     authors:
       - name: "Chengjie Jiang"
+        suffix: "*"
       - name: "Yunqi Zhou"
+        suffix: "*"
         highlight: true
       - name: "Jiafeng Yan"
       - name: "Sihang Zhao"
       - name: "Chun Yuan"
       - name: "Jing Li"
+        suffix: "†"
     topics:
       - remote-sensing
       - vlm
