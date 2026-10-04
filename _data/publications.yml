@@ -118,7 +118,7 @@ papers:
         url: "https://kiki-zyq.github.io/Zoom-Search/"
         style: project
     stats:
-      citations: 11
+      citations: 12
       github_repo: "kiki-zyq/ZoomSearch"
 
   - id: grasp
