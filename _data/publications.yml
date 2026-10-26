@@ -50,6 +50,9 @@ papers:
       - label: "Model"
         url: "https://huggingface.co/ronniejiangC/RS-OPSD"
         style: huggingface
+      - label: "Dataset"
+        url: "https://huggingface.co/datasets/ronniejiangC/GeoEvidence-6K"
+        style: huggingface
     stats:
       citations: 0
 
@@ -152,6 +155,9 @@ papers:
       - label: "arXiv"
         url: "https://arxiv.org/abs/2508.17102"
         style: arxiv
+      - label: "Paper"
+        url: "https://www.sciencedirect.com/science/article/abs/pii/S0924271626004934"
+        style: published
     stats:
       citations: 7
 
