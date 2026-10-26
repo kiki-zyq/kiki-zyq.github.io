@@ -242,14 +242,15 @@
 }
 
 .publication-button--published {
-  border-color: #3f8f8b;
-  background-color: #3f8f8b;
+  border: 2px solid #365f7d;
+  background-color: #365f7d;
   color: #fff !important;
 }
 
 .publication-button--published:hover {
-  background-color: transparent !important;
-  color: #3f8f8b !important;
+  border-color: #365f7d !important;
+  background-color: #fff !important;
+  color: #365f7d !important;
 }
 
 .publication-button {
