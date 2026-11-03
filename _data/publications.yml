@@ -84,9 +84,9 @@ papers:
     ccf_rank: "B"
     
     links:
-  -   label: "Paper"
-      url: "https://dl.acm.org/doi/10.1145/3799682.3841040"
-      style: published
+      - label: "Paper"
+        url: "https://dl.acm.org/doi/10.1145/3799682.3841040"
+        style: published
 
     stats:
       citations: 0
