@@ -59,7 +59,7 @@ papers:
   - id: routing-by-contract
     title: "Routing by Contract: Evidence-Gated Skill Selection for Language Agents"
     year: 2026
-    date_label: "2026"
+    date_label: "Nov 2026"
     venue: "ACM CIKM 2026"
     badge: "CIKM'26"
     badge_style: conference
@@ -124,7 +124,7 @@ papers:
         url: "https://kiki-zyq.github.io/Zoom-Search/"
         style: project
     stats:
-      citations: 14
+      citations: 16
       github_repo: "kiki-zyq/ZoomSearch"
 
   - id: grasp
@@ -162,6 +162,6 @@ papers:
         url: "https://www.sciencedirect.com/science/article/abs/pii/S0924271626004934"
         style: published
     stats:
-      citations: 7
+      citations: 8
 
  
