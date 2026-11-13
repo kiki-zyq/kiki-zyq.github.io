@@ -54,7 +54,7 @@ papers:
         url: "https://huggingface.co/datasets/ronniejiangC/GeoEvidence-6K"
         style: huggingface
     stats:
-      citations: 0
+      citations: 1
 
   - id: routing-by-contract
     title: "Routing by Contract: Evidence-Gated Skill Selection for Language Agents"
@@ -124,7 +124,7 @@ papers:
         url: "https://kiki-zyq.github.io/Zoom-Search/"
         style: project
     stats:
-      citations: 16
+      citations: 18
       github_repo: "kiki-zyq/ZoomSearch"
 
   - id: grasp
